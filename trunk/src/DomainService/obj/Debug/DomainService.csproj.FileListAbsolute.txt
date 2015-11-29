@@ -1,0 +1,14 @@
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\bin\Debug\Consumentor.ShopGun.DomainService.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\bin\Debug\Consumentor.ShopGun.DomainService.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\bin\Debug\Consumentor.ShopGun.Domain.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\bin\Debug\Consumentor.ShopGun.Gateway.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\bin\Debug\Consumentor.ShopGun.Infrastructure.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\bin\Debug\Castle.Windsor.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\bin\Debug\Castle.MicroKernel.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\bin\Debug\Castle.DynamicProxy2.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\bin\Debug\Consumentor.ShopGun.Domain.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\bin\Debug\Consumentor.ShopGun.Gateway.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\bin\Debug\Consumentor.ShopGun.Infrastructure.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\obj\Debug\Consumentor.ShopGun.DomainService.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\obj\Debug\Consumentor.ShopGun.DomainService.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\obj\Debug\DomainService.csprojResolveAssemblyReference.cache

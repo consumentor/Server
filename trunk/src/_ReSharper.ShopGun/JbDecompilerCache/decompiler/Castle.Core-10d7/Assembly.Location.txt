@@ -1,0 +1,1 @@
+﻿C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\DomainService\bin\Debug\Castle.Core.dll

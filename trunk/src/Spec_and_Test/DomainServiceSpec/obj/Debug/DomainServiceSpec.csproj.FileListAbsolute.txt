@@ -1,0 +1,17 @@
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\DomainServiceSpec.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\DomainServiceSpec.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\Consumentor.ShopGun.Domain.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\Consumentor.ShopGun.Infrastructure.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\NBehave.Spec.Framework.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\NBehave.Spec.NUnit.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\Castle.Core.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\Castle.Windsor.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\Castle.MicroKernel.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\Rhino.Mocks.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\nunit.framework.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\Castle.DynamicProxy2.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\Consumentor.ShopGun.Domain.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Debug\Consumentor.ShopGun.Infrastructure.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\obj\Debug\DomainServiceSpec.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\obj\Debug\DomainServiceSpec.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\obj\Debug\DomainServiceSpec.csprojResolveAssemblyReference.cache

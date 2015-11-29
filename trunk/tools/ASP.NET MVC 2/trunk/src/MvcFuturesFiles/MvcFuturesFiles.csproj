@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{075BA018-DD6D-4077-96CA-D8640D888009}</ProjectGuid>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MvcFuturesFiles</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\bin\Debug\MvcFutures\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\bin\Release\MvcFutures\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Target Name="Build">
+    <Copy SourceFiles="@(Content)" DestinationFiles="@(Content->'$(OutputPath)%(RelativeDir)%(Filename)%(Extension)')" />
+  </Target>
+  <Target Name="Clean">
+    <Exec Command="rd /s /q $(OutputPath)" Condition="Exists($(OutputPath))" />
+  </Target>
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build">
+  </Target>
+  <ItemGroup>
+    <Content Include="DefaultTemplates\DisplayTemplates\Boolean.ascx" />
+    <Content Include="DefaultTemplates\DisplayTemplates\Collection.ascx" />
+    <Content Include="DefaultTemplates\DisplayTemplates\Decimal.ascx" />
+    <Content Include="DefaultTemplates\DisplayTemplates\EmailAddress.ascx" />
+    <Content Include="DefaultTemplates\DisplayTemplates\HiddenInput.ascx" />
+    <Content Include="DefaultTemplates\DisplayTemplates\Html.ascx" />
+    <Content Include="DefaultTemplates\DisplayTemplates\Object.ascx" />
+    <Content Include="DefaultTemplates\DisplayTemplates\String.ascx" />
+    <Content Include="DefaultTemplates\DisplayTemplates\Url.ascx" />
+    <Content Include="DefaultTemplates\EditorTemplates\Boolean.ascx" />
+    <Content Include="DefaultTemplates\EditorTemplates\Collection.ascx" />
+    <Content Include="DefaultTemplates\EditorTemplates\Decimal.ascx" />
+    <Content Include="DefaultTemplates\EditorTemplates\HiddenInput.ascx" />
+    <Content Include="DefaultTemplates\EditorTemplates\MultilineText.ascx" />
+    <Content Include="DefaultTemplates\EditorTemplates\Object.ascx" />
+    <Content Include="DefaultTemplates\EditorTemplates\Password.ascx" />
+    <Content Include="DefaultTemplates\EditorTemplates\String.ascx" />
+    <Content Include="iismap.vbs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MicrosoftMvcJQueryValidation.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MicrosoftMvcRemoteValidation.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MvcDiagnostics.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="registermvc.wsf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="unregistermvc.wsf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

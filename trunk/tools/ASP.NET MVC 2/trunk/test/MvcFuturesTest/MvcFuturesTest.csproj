@@ -1,0 +1,160 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C28DA70-60F1-4442-967F-591BF3962EC5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Web</RootNamespace>
+    <AssemblyName>MvcFuturesTest</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq, Version=2.0.2991.26580, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\tools\Moq\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mvc\Controls\Test\DesignModeSite.cs" />
+    <Compile Include="Mvc\Controls\Test\DropDownListTest.cs" />
+    <Compile Include="Mvc\Controls\Test\MvcControlTest.cs" />
+    <Compile Include="Mvc\Controls\Test\MvcTestHelper.cs" />
+    <Compile Include="Mvc\Controls\Test\ViewDataContainer.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\BindingBehaviorAttributeTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\BinaryDataModelBinderProviderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ExtensibleModelBinderAdapterTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ExtensibleModelBindingContextTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\GenericModelBinderProviderTest.cs" />
+    <Compile Include="Mvc\Test\AreaHelpersTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\CollectionModelBinderProviderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\CollectionModelBinderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\CollectionModelBinderUtilTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ComplexModelDtoResultTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ComplexModelDtoTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ComplexModelDtoModelBinderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ComplexModelDtoModelBinderProviderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ArrayModelBinderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ArrayModelBinderProviderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\DictionaryModelBinderProviderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\DictionaryModelBinderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\KeyValuePairModelBinderUtilTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\KeyValuePairModelBinderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\KeyValuePairModelBinderProviderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\MutableObjectModelBinderProviderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\MutableObjectModelBinderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\TypeConverterModelBinderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\TypeConverterModelBinderProviderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ModelBinderConfigTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\SimpleModelBinderProviderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\TypeMatchModelBinderProviderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\TypeMatchModelBinderTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ModelBinderProviderCollectionTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ModelBinderUtilTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ModelValidationNodeTest.cs" />
+    <Compile Include="Mvc\ModelBinding\Test\ModelBinderProvidersTest.cs" />
+    <Compile Include="Mvc\Test\ButtonTest.cs" />
+    <Compile Include="Mvc\Test\ContentTypeAttributeTest.cs" />
+    <Compile Include="Mvc\Test\ControllerExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\CookieTempDataProviderTest.cs" />
+    <Compile Include="Mvc\Test\AcceptAjaxAttributeTest.cs" />
+    <Compile Include="Mvc\Test\AsyncManagerExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\CookieValueProviderFactoryTest.cs" />
+    <Compile Include="Mvc\Test\ModelCopierTest.cs" />
+    <Compile Include="Mvc\Test\ElementalValueProviderTest.cs" />
+    <Compile Include="Mvc\Test\ValueProviderUtilTest.cs" />
+    <Compile Include="Mvc\Test\TempDataValueProviderFactoryTest.cs" />
+    <Compile Include="Mvc\Test\SessionValueProviderFactoryTest.cs" />
+    <Compile Include="Mvc\Test\ServerVariablesValueProviderFactoryTest.cs" />
+    <Compile Include="Mvc\Test\DynamicSessionStateConfigurator35Test.cs" />
+    <Compile Include="Mvc\Test\MvcReadOnlySessionHandlerTest.cs" />
+    <Compile Include="Mvc\Test\MvcDynamicSessionModuleTest.cs" />
+    <Compile Include="Mvc\Test\MvcDynamicSessionControllerFactoryTest.cs" />
+    <Compile Include="Mvc\Test\MvcDynamicSessionHandlerTest.cs" />
+    <Compile Include="Mvc\Test\JsonValueProviderFactoryTest.cs" />
+    <Compile Include="Mvc\Test\CopyAsyncParametersAttributeTest.cs" />
+    <Compile Include="Mvc\Test\CssExtensionsTests.cs" />
+    <Compile Include="Mvc\Test\DeserializeAttributeTest.cs" />
+    <Compile Include="Mvc\Test\NameExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\ScriptExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\SerializationExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\MvcSerializerTest.cs" />
+    <Compile Include="Mvc\Test\LazyTest.cs" />
+    <Compile Include="Mvc\Test\ExpressionHelperTest.cs" />
+    <Compile Include="Mvc\Test\MailToExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\ReaderWriterCacheTest.cs" />
+    <Compile Include="Mvc\Test\RenderActionTest.cs" />
+    <Compile Include="Mvc\Test\SkipBindingAttributeTest.cs" />
+    <Compile Include="Mvc\Test\FormExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\RadioExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\SubmitImageExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\ImageExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\SubmitButtonExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\TypeHelpersTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MvcFutures\MvcFutures.csproj">
+      <Project>{D3CF7430-6DA4-42B0-BD90-CA39D16687B2}</Project>
+      <Name>MvcFutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\SystemWebMvc\System.Web.Mvc.csproj">
+      <Project>{3D3FFD8A-624D-4E9B-954B-E1C105507975}</Project>
+      <Name>System.Web.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitTestUtil\UnitTestUtil.csproj">
+      <Project>{57FFC134-7F9D-4B97-8692-8D2C16714663}</Project>
+      <Name>UnitTestUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

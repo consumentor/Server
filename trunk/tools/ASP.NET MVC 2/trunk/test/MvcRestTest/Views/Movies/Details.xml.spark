@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="${responseFormat.CharSet}"?>
+<viewdata model="Movie" responseFormat="ContentType"/>
+<!-- this is an XML comment (Spark), it shows up in the body -->
+# // this is a code comment, it is swallowed during compilation
+# // the title attribute on the Movie element is ignored by the DataContractSerializer
+<Movie Title="${Model.Title}">
+  <DateReleased>${XmlConvert.ToString(Model.DateReleased, XmlDateTimeSerializationMode.RoundtripKind)}</DateReleased>
+  <Director>${Model.Director}</Director>
+  <Id>${Model.Id}</Id>
+  <Title>${Model.Title}</Title>
+</Movie>

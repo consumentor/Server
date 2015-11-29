@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="advicesearchstatisticsdomainservicetests" storage="c:\users\simon\consumentor\shopgun\trunk\src\spec_and_test\domainservicetest\advicesearchstatisticsdomainservicetests.orderedtest" id="eb2471b7-d3e5-4fab-a926-f0c13b34164e" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <Css projectStructure="" iteration="" />
+  <Execution timeOut="2147483647" />
+  <Owners>
+    <Owner name="" />
+  </Owners>
+  <TestLinks>
+    <TestLink id="e69a04db-204d-a6c7-63c8-d0a6f3a2d6cd" name="AddAdviceSearchTest" storage="bin\debug\domainservicetest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="d2dfffd1-52c6-67ab-2065-17faf68c246a" name="AddAdviceSearchTest1" storage="bin\debug\domainservicetest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="d6c2f984-be18-5806-8a9f-93bf7a3f837a" name="AdviceSearchStatisticsDomainServiceConstructorTest" storage="bin\debug\domainservicetest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="39d27169-8946-b311-1415-3d17bac467b8" name="GetAdviceSearchesForUserTest" storage="bin\debug\domainservicetest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="4be11a0f-722e-d56c-4a33-d2030223b4b4" name="GetAdviceSearchesForUserTest1" storage="bin\debug\domainservicetest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="46ac1614-946e-9fdc-c2fe-c74f46795d6a" name="GetNumberAdviceSearchesTest" storage="bin\debug\domainservicetest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="d1ae9edf-1ab8-5f38-0ef7-047187023edc" name="GetUsersWhoSearchedTest" storage="bin\debug\domainservicetest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

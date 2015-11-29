@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Import  Project="Tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+  <Import Project="Common.targets"/>
+  <Import Project="Install.targets"/>
+
+
+  <PropertyGroup>
+    <MSBuildCommunityTasksLib>MSBuild.Community.Tasks.dll</MSBuildCommunityTasksLib>
+    <Version Condition=" '$(CCNetLabel)' == '' ">1.0.0.0</Version>
+    <Version Condition=" '$(CCNetLabel)' != '' ">$(CCNetLabel)</Version>
+    <CCNetArtifactDirectory Condition=" '$(CCNetArtifactDirectory)' == '' ">Build/</CCNetArtifactDirectory>
+    <BuildDirectory>Build</BuildDirectory>
+    <InstallUser>shopgun.admin</InstallUser>
+    <InstallPwd>Qaz_123</InstallPwd>
+    <BuildStatusFile Condition=" '$(CCNetLabel)' != '' ">$(CCNetListenerFile)</BuildStatusFile>
+    <BuildStatusFile Condition=" '$(CCNetLabel)' == '' ">BuildStatus.xml</BuildStatusFile>
+    <ShopGunServer>192.168.1.151</ShopGunServer>
+  </PropertyGroup>
+ 
+  <Target Name="All" DependsOnTargets="Compile;FxCop">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target All" />
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="Compile;">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target Build" />
+  </Target>
+
+  <Target Name="IntegrationTest" DependsOnTargets="Compile;IntegrationTestOnly">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target IntegrationTest" />
+  </Target>
+
+  <Target Name="FxCop" >
+    <ItemGroup>
+      <ConsumentorFiles Include="src\**\bin\debug\*.*" Exclude="**\obj\**\*.*;**\.svn\**;src\Spec_and_Test\**\*.*;**\*.vshost*.*" />
+      <OldFxCopFiles Include="$(BuildDirectory)\Output\*.*"  />
+    </ItemGroup>
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target FxCop" />
+    <Delete Files="@(OldFxCopFiles)" />
+    <Copy SourceFiles="@(ConsumentorFiles)" DestinationFolder="$(BuildDirectory)/Output" />
+    <ItemGroup>
+      <OutPutFiles Include="$(BuildDirectory)\Output\consumentor.shopgun*.dll;$(BuildDirectory)\Output\Consumentor.ShopGun*.exe" Exclude="$(BuildDirectory)\Output\Consumentor.ShopGun.Gateway.dll;$(BuildDirectory)\Output\*.config;" />
+    </ItemGroup>
+    <!-- need to figure out TargetAssemblies folder dynamicly -->
+    <!-- Rules ignored: InteroperabilityRules.dll;MobilityRules.dll;PortabilityRules.dll;SecurityRules.dll -->
+    <!-- Temp removed: Rules="-Microsoft.Design#CA1033" -->
+    <!--
+    Microsoft.Design#CA1033 - seal type
+    Microsoft.Design#CA1006 - Nesting of generic types
+    Microsoft.Naming#CA1710 - Rename '<type>' to end in 'Collection'.
+    Microsoft.Design#CA1004 - Gillar inte metoder typ: void Foo<T>(T value);
+    Microsoft.Design#CA1020 - För få typer i namespace
+    Microsoft.Performance#CA1800 - a parameter, is cast to type '<type>' multiple times in method 
+    Microsoft.Performance#CA1822 - The 'this' parameter of '<type>.<method>(...)' is never used. Mark the member as static or use 'this' in the method body or at least one property accessor, if appropriate
+    Microsoft.Design#CA1063 - Remove IDisposable from the list of interfaces implemented by 'OrderMatchRepository' and override the base class Dispose implementation instead
+    
+    
+    -->
+    <FxCop
+			ToolPath="Tools\FxCop"
+        TargetAssemblies="@(OutPutFiles)"
+        RuleLibraries="DesignRules.dll;GlobalizationRules.dll;NamingRules.dll;PerformanceRules.dll;UsageRules.dll"
+        Rules="-Microsoft.Design#CA1063;-Microsoft.Design#CA1004;-Microsoft.Design#CA1020;-Microsoft.Performance#CA1800;-Microsoft.Design#CA1033;-Microsoft.Design#CA1006;-Microsoft.Naming#CA1710;;-Microsoft.Performance#CA1822"
+        AnalysisReportFileName="$(CCNetArtifactDirectory)\FxCop.xml"
+			  IncludeSummaryReport="True"
+			  Verbose="True"
+        FailOnError="True"
+			  DirectOutputToConsole="False"
+        ApplyOutXsl="False"
+        SearchGac="True"
+        OutputXslFileName="..\Tools\CCNET\webdashboard\xsl\fxcop-summary.xsl"
+    />
+    <!-- To ignore rules, add the row below to the above task and change the rules to ignore 
+				Rules="-Microsoft.Usage#CA2209;-Microsoft.Design#CA2210" -->
+    <!-- Now fail if FxCop reported any errors -->
+    <PropertyGroup>
+      <FxCopCriticalErrors>0</FxCopCriticalErrors>
+      <FxCopErrors>0</FxCopErrors>
+      <FxCopCriticalWarnings>0</FxCopCriticalWarnings>
+    </PropertyGroup>
+    <XmlRead ContinueOnError="True"
+					XmlFileName="$(CCNetArtifactDirectory)\FxCop.xml"
+					XPath="string(count(//Issue[@Level='CriticalError']))">
+      <Output TaskParameter="Value" PropertyName="FxCopCriticalErrors" />
+    </XmlRead>
+    <XmlRead ContinueOnError="True"
+					XmlFileName="$(CCNetArtifactDirectory)\FxCop.xml"
+					XPath="string(count(//Issue[@Level='Error']))">
+      <Output TaskParameter="Value" PropertyName="FxCopErrors" />
+    </XmlRead>
+    <XmlRead ContinueOnError="True"
+					XmlFileName="$(CCNetArtifactDirectory)\FxCop.xml"
+					XPath="string(count(//Issue[@Level='CriticalWarning']))">
+      <Output TaskParameter="Value" PropertyName="FxCopCriticalWarnings" />
+    </XmlRead>
+    <Error Text="FxCop encountered rule violations. Critical errors: $(FxCopCriticalErrors), Errors: $(FxCopErrors), Critical Warnings: $(FxCopCriticalWarnings)"
+				Condition="$(FxCopCriticalErrors) &gt; 0 or $(FxCopErrors) &gt; 0 or $(FxCopCriticalWarnings) &gt; 0" />
+  </Target>
+
+</Project>

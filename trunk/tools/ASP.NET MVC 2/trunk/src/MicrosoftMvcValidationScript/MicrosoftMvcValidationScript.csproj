@@ -1,0 +1,59 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83CAA00D-A07D-45FD-8CE3-3298CFF374CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>MicrosoftMvcValidation</AssemblyName>
+    <NoStdLib>True</NoStdLib>
+    <CopyReferences>True</CopyReferences>
+    <TemplateFile>Properties\Script.jst</TemplateFile>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0028, 1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <DocumentationFile>bin\Release\MvcValidationScript.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="..\..\tools\ScriptSharp\Atlas\aacorlib.dll" />
+    <Reference Include="..\..\tools\ScriptSharp\Atlas\MicrosoftAjax.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Script.jst" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NumberValidator.cs" />
+    <Compile Include="FormContext.cs" />
+    <Compile Include="Validation.cs" />
+    <Compile Include="FieldContext.cs" />
+    <Compile Include="JsonValidationField.cs" />
+    <Compile Include="JsonValidationOptions.cs" />
+    <Compile Include="JsonValidationRule.cs" />
+    <Compile Include="RangeValidator.cs" />
+    <Compile Include="RegularExpressionValidator.cs" />
+    <Compile Include="RequiredValidator.cs" />
+    <Compile Include="StringLengthValidator.cs" />
+    <Compile Include="ValidationContext.cs" />
+    <Compile Include="ValidationUtil.cs" />
+    <Compile Include="Validator.cs" />
+    <Compile Include="ValidatorCreator.cs" />
+    <Compile Include="ValidatorRegistry.cs" />
+  </ItemGroup>
+  <Import Project="..\..\tools\ScriptSharp\nStuff.ScriptSharp.targets" />
+</Project>

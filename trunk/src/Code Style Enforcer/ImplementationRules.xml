@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rules xmlns="http://joel.fjorden.se/CodeStyleEnforcer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://joel.fjorden.se/CodeStyleEnforcer ImplementationRules.xsd" Version="2.1.0.0">
+  <Rule CodeType="Method">
+    <AllowedInterfaceImplementation>Explicit</AllowedInterfaceImplementation>
+  </Rule>
+  <Rule CodeType="Property">
+    <AllowedInterfaceImplementation>Explicit</AllowedInterfaceImplementation>
+  </Rule>
+  <Rule CodeType="Event">
+    <AllowedInterfaceImplementation>Any</AllowedInterfaceImplementation>
+  </Rule>
+</Rules>

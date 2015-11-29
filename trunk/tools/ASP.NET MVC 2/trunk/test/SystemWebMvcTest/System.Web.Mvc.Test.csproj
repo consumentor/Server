@@ -1,0 +1,280 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8AC2A2E4-2F11-4D40-A887-62E2583A65E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System.Web</RootNamespace>
+    <AssemblyName>System.Web.Mvc.Test</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq, Version=2.0.2991.26580, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\tools\Moq\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mvc\Ajax\Test\AjaxExtensionsTest.cs" />
+    <Compile Include="Mvc\Ajax\Test\AjaxOptionsTest.cs" />
+    <Compile Include="Mvc\Async\Test\AsyncActionMethodSelectorTest.cs" />
+    <Compile Include="Mvc\Async\Test\AsyncControllerActionInvokerTest.cs" />
+    <Compile Include="Mvc\Async\Test\AsyncUtilTest.cs" />
+    <Compile Include="Mvc\Async\Test\AsyncActionDescriptorTest.cs" />
+    <Compile Include="Mvc\Test\AsyncControllerTest.cs" />
+    <Compile Include="Mvc\Async\Test\SynchronousOperationExceptionTest.cs" />
+    <Compile Include="Mvc\Async\Test\AsyncManagerTest.cs" />
+    <Compile Include="Mvc\Async\Test\AsyncResultWrapperTest.cs" />
+    <Compile Include="Mvc\Test\AsyncTimeoutAttributeTest.cs" />
+    <Compile Include="Mvc\Test\ClientDataTypeModelValidatorProviderTest.cs" />
+    <Compile Include="Mvc\Test\HttpFileCollectionValueProviderFactoryTest.cs" />
+    <Compile Include="Mvc\Test\RangeAttributeAdapterTest.cs" />
+    <Compile Include="Mvc\Test\RegularExpressionAttributeAdapterTest.cs" />
+    <Compile Include="Mvc\Test\RequiredAttributeAdapterTest.cs" />
+    <Compile Include="Mvc\Test\RouteDataValueProviderFactoryTest.cs" />
+    <Compile Include="Mvc\Test\QueryStringValueProviderFactoryTest.cs" />
+    <Compile Include="Mvc\Test\FormValueProviderFactoryTest.cs" />
+    <Compile Include="Mvc\Test\StringLengthAttributeAdapterTest.cs" />
+    <Compile Include="Mvc\Test\ValueProviderFactoryCollectionTest.cs" />
+    <Compile Include="Mvc\Test\TypeCacheUtilTest.cs" />
+    <Compile Include="Mvc\Test\TypeCacheSerializerTest.cs" />
+    <Compile Include="Mvc\Test\NoAsyncTimeoutAttributeTest.cs" />
+    <Compile Include="Mvc\Async\Test\OperationCounterTest.cs" />
+    <Compile Include="Mvc\Async\Test\ReflectedAsyncActionDescriptorTest.cs" />
+    <Compile Include="Mvc\Async\Test\ReflectedAsyncControllerDescriptorTest.cs" />
+    <Compile Include="Mvc\Async\Test\SignalContainer.cs" />
+    <Compile Include="Mvc\Async\Test\TriggerListenerTest.cs" />
+    <Compile Include="Mvc\Async\Test\MockAsyncResult.cs" />
+    <Compile Include="Mvc\Async\Test\SimpleAsyncResultTest.cs" />
+    <Compile Include="Mvc\Async\Test\SynchronizationContextUtilTest.cs" />
+    <Compile Include="Mvc\ExpressionUtil\Test\ConstantExpressionFingerprintTest.cs" />
+    <Compile Include="Mvc\ExpressionUtil\Test\ConditionalExpressionFingerprintTest.cs" />
+    <Compile Include="Mvc\ExpressionUtil\Test\BinaryExpressionFingerprintTest.cs" />
+    <Compile Include="Mvc\ExpressionUtil\Test\CachedExpressionCompilerTest.cs" />
+    <Compile Include="Mvc\ExpressionUtil\Test\ExpressionParserTest.cs" />
+    <Compile Include="Mvc\ExpressionUtil\Test\MethodCallExpressionFingerprintTest.cs" />
+    <Compile Include="Mvc\ExpressionUtil\Test\MemberExpressionFingerprintTest.cs" />
+    <Compile Include="Mvc\ExpressionUtil\Test\ExpressionHelper.cs" />
+    <Compile Include="Mvc\ExpressionUtil\Test\UnaryExpressionFingerprintTest.cs" />
+    <Compile Include="Mvc\ExpressionUtil\Test\ParameterExpressionFingerprintTest.cs" />
+    <Compile Include="Mvc\ExpressionUtil\Test\ExpressionFingerprintTest.cs" />
+    <Compile Include="Mvc\ExpressionUtil\Test\FastTrackTest.cs" />
+    <Compile Include="Mvc\Html\Test\ChildActionExtensionsTest.cs" />
+    <Compile Include="Mvc\Html\Test\DefaultDisplayTemplatesTest.cs" />
+    <Compile Include="Mvc\Html\Test\DefaultEditorTemplatesTest.cs" />
+    <Compile Include="Mvc\Html\Test\FormExtensionsTest.cs" />
+    <Compile Include="Mvc\Html\Test\InputExtensionsTest.cs" />
+    <Compile Include="Mvc\Html\Test\LabelExtensionsTest.cs" />
+    <Compile Include="Mvc\Html\Test\LinkExtensionsTest.cs" />
+    <Compile Include="Mvc\Html\Test\MvcFormTest.cs" />
+    <Compile Include="Mvc\Html\Test\PartialExtensionsTest.cs" />
+    <Compile Include="Mvc\Html\Test\RenderPartialExtensionsTest.cs" />
+    <Compile Include="Mvc\Html\Test\SelectExtensionsTest.cs" />
+    <Compile Include="Mvc\Html\Test\TemplateHelpersTest.cs" />
+    <Compile Include="Mvc\Html\Test\TextAreaExtensionsTest.cs" />
+    <Compile Include="Mvc\Html\Test\ValidationExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\ActionExecutedContextTest.cs" />
+    <Compile Include="Mvc\Test\ActionExecutingContextTest.cs" />
+    <Compile Include="Mvc\Test\AntiForgeryDataSerializerTest.cs" />
+    <Compile Include="Mvc\Test\AntiForgeryDataTest.cs" />
+    <Compile Include="Mvc\Test\AssociatedValidatorProviderTest.cs" />
+    <Compile Include="Mvc\Test\BindAttributeTest.cs" />
+    <Compile Include="Mvc\Test\AssociatedMetadataProviderTest.cs" />
+    <Compile Include="Mvc\Test\ByteArrayModelBinderTest.cs" />
+    <Compile Include="Mvc\Test\ChildActionOnlyAttributeTest.cs" />
+    <Compile Include="Mvc\Test\ControllerBaseTest.cs" />
+    <Compile Include="Mvc\Test\ActionMethodSelectorTest.cs" />
+    <Compile Include="Mvc\Test\ActionNameAttributeTest.cs" />
+    <Compile Include="Mvc\Test\AcceptVerbsAttributeTest.cs" />
+    <Compile Include="Mvc\Test\ControllerContextTest.cs" />
+    <Compile Include="Mvc\Test\AuthorizationContextTest.cs" />
+    <Compile Include="Mvc\Test\ParameterInfoUtilTest.cs" />
+    <Compile Include="Mvc\Test\ModelValidationResultTest.cs" />
+    <Compile Include="Mvc\Test\HttpHandlerUtilTest.cs" />
+    <Compile Include="Mvc\Test\ValueProviderFactoriesTest.cs" />
+    <Compile Include="Mvc\Test\ValueProviderCollectionTest.cs" />
+    <Compile Include="Mvc\Test\HttpFileCollectionValueProviderTest.cs" />
+    <Compile Include="Mvc\Test\DictionaryValueProviderTest.cs" />
+    <Compile Include="Mvc\Test\NameValueCollectionValueProviderTest.cs" />
+    <Compile Include="Mvc\Test\ValueProviderUtilTest.cs" />
+    <Compile Include="Mvc\Test\DataErrorInfoModelValidatorProviderTest.cs" />
+    <Compile Include="Mvc\Test\ModelValidatorProviderCollectionTest.cs" />
+    <Compile Include="Mvc\Test\HttpVerbAttributeHelper.cs" />
+    <Compile Include="Mvc\Test\HttpDeleteAttributeTest.cs" />
+    <Compile Include="Mvc\Test\HttpPutAttributeTest.cs" />
+    <Compile Include="Mvc\Test\HttpGetAttributeTest.cs" />
+    <Compile Include="Mvc\Test\DataAnnotationsModelValidatorTest.cs" />
+    <Compile Include="Mvc\Test\EmptyModelValidatorProviderTest.cs" />
+    <Compile Include="Mvc\Test\ModelValidatorProvidersTest.cs" />
+    <Compile Include="Mvc\Test\ModelValidatorTest.cs" />
+    <Compile Include="Mvc\Test\MvcHtmlStringTest.cs" />
+    <Compile Include="Mvc\Test\DynamicTypeGeneratorTest.cs" />
+    <Compile Include="Mvc\Test\DataAnnotationsModelValidatorProviderTest.cs" />
+    <Compile Include="Mvc\Test\ExpressionHelperTest.cs" />
+    <Compile Include="Mvc\Test\FormContextTest.cs" />
+    <Compile Include="Mvc\Test\FieldValidationMetadataTest.cs" />
+    <Compile Include="Mvc\Test\ModelClientValidationRuleTest.cs" />
+    <Compile Include="Mvc\Test\RequireHttpsAttributeTest.cs" />
+    <Compile Include="Mvc\Test\HttpRequestExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\DataAnnotationsModelMetadataProviderTest.cs" />
+    <Compile Include="Mvc\Test\ModelMetadataProvidersTest.cs" />
+    <Compile Include="Mvc\Test\ModelMetadataTest.cs" />
+    <Compile Include="Mvc\Test\AreaHelpersTest.cs" />
+    <Compile Include="Mvc\Test\AreaRegistrationContextTest.cs" />
+    <Compile Include="Mvc\Test\AreaRegistrationTest.cs" />
+    <Compile Include="Mvc\Async\Test\SingleEntryGateTest.cs" />
+    <Compile Include="Mvc\Test\HttpPostAttributeTest.cs" />
+    <Compile Include="Mvc\Test\LinqBinaryModelBinderTest.cs" />
+    <Compile Include="Mvc\Test\MockHelpers.cs" />
+    <Compile Include="Mvc\Test\PathHelpersTest.cs" />
+    <Compile Include="Mvc\Test\ExceptionContextTest.cs" />
+    <Compile Include="Mvc\Test\ModelBindingContextTest.cs" />
+    <Compile Include="Mvc\Test\ResultExecutedContextTest.cs" />
+    <Compile Include="Mvc\Test\ResultExecutingContextTest.cs" />
+    <Compile Include="Mvc\Test\ValidateAntiForgeryTokenAttributeTest.cs" />
+    <Compile Include="Mvc\Test\HttpAntiForgeryExceptionTest.cs" />
+    <Compile Include="Mvc\Test\DictionaryHelpersTest.cs" />
+    <Compile Include="Mvc\Test\AjaxRequestExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\JavaScriptResultTest.cs" />
+    <Compile Include="Mvc\Test\ModelBinderDictionaryTest.cs" />
+    <Compile Include="Mvc\Test\DefaultViewLocationCacheTest.cs" />
+    <Compile Include="Mvc\Test\FormCollectionTest.cs" />
+    <Compile Include="Mvc\Test\HttpPostedFileBaseModelBinderTest.cs" />
+    <Compile Include="Mvc\Test\ValidateInputAttributeTest.cs" />
+    <Compile Include="Mvc\Test\FileContentResultTest.cs" />
+    <Compile Include="Mvc\Test\FilePathResultTest.cs" />
+    <Compile Include="Mvc\Test\FileResultTest.cs" />
+    <Compile Include="Mvc\Test\FileStreamResultTest.cs" />
+    <Compile Include="Mvc\Test\ControllerDescriptorTest.cs" />
+    <Compile Include="Mvc\Test\ControllerDescriptorCacheTest.cs" />
+    <Compile Include="Mvc\Test\ReaderWriterCacheTest.cs" />
+    <Compile Include="Mvc\Test\ReflectedParameterBindingInfoTest.cs" />
+    <Compile Include="Mvc\Test\ParameterBindingInfoTest.cs" />
+    <Compile Include="Mvc\Test\ReflectedControllerDescriptorTest.cs" />
+    <Compile Include="Mvc\Test\ActionDescriptorTest.cs" />
+    <Compile Include="Mvc\Test\ReflectedActionDescriptorTest.cs" />
+    <Compile Include="Mvc\Test\ReflectedParameterDescriptorTest.cs" />
+    <Compile Include="Mvc\Test\ParameterDescriptorTest.cs" />
+    <Compile Include="Mvc\Test\DefaultModelBinderTest.cs" />
+    <Compile Include="Mvc\Test\ValueProviderDictionaryTest.cs" />
+    <Compile Include="Mvc\Test\ValueProviderResultTest.cs" />
+    <Compile Include="Mvc\Test\ModelBinderAttributeTest.cs" />
+    <Compile Include="Mvc\Test\ModelBindersTest.cs" />
+    <Compile Include="Mvc\Test\ViewContextTest.cs" />
+    <Compile Include="Mvc\Test\ViewDataInfoTest.cs" />
+    <Compile Include="Mvc\Test\ViewEngineResultTest.cs" />
+    <Compile Include="Mvc\Test\NonActionAttributeTest.cs" />
+    <Compile Include="Mvc\Test\ModelStateDictionaryTest.cs" />
+    <Compile Include="Mvc\Test\ModelStateTest.cs" />
+    <Compile Include="Mvc\Test\ModelErrorCollectionTest.cs" />
+    <Compile Include="Mvc\Test\ModelErrorTest.cs" />
+    <Compile Include="Mvc\Test\AjaxHelperTest.cs" />
+    <Compile Include="Mvc\Test\AuthorizeAttributeTest.cs" />
+    <Compile Include="Mvc\Test\ControllerActionInvokerTest.cs" />
+    <Compile Include="Mvc\Test\ActionFilterAttributeTest.cs" />
+    <Compile Include="Mvc\Test\ControllerBuilderTest.cs" />
+    <Compile Include="Mvc\Test\ControllerTest.cs" />
+    <Compile Include="Mvc\Test\ContentResultTest.cs" />
+    <Compile Include="Mvc\Test\ActionMethodDispatcherTest.cs" />
+    <Compile Include="Mvc\Test\ActionMethodDispatcherCacheTest.cs" />
+    <Compile Include="Mvc\Test\PartialViewResultTest.cs" />
+    <Compile Include="Mvc\Test\ViewEngineCollectionTest.cs" />
+    <Compile Include="Mvc\Test\ViewResultBaseTest.cs" />
+    <Compile Include="Mvc\Test\VirtualPathProviderViewEngineTest.cs" />
+    <Compile Include="Mvc\Test\WebFormViewTest.cs" />
+    <Compile Include="Mvc\Test\MvcHttpHandlerTest.cs" />
+    <Compile Include="Mvc\Test\HandleErrorAttributeTest.cs" />
+    <Compile Include="Mvc\Test\HandleErrorInfoTest.cs" />
+    <Compile Include="Mvc\Test\HttpUnauthorizedResultTest.cs" />
+    <Compile Include="Mvc\Test\SessionStateTempDataProviderTest.cs" />
+    <Compile Include="Mvc\Test\OutputCacheAttributeTest.cs" />
+    <Compile Include="Mvc\Test\JsonResultTest.cs" />
+    <Compile Include="Mvc\Test\NameValueCollectionExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\MockBuildManager.cs" />
+    <Compile Include="Mvc\Test\DefaultControllerFactoryTest.cs" />
+    <Compile Include="Mvc\Test\HtmlHelperTest.cs" />
+    <Compile Include="Mvc\Test\MultiSelectListTest.cs" />
+    <Compile Include="Mvc\Test\MvcHandlerTest.cs" />
+    <Compile Include="Mvc\Test\MvcRouteHandlerTest.cs" />
+    <Compile Include="Mvc\Test\MvcTestHelper.cs" />
+    <Compile Include="Mvc\Test\RedirectResultTest.cs" />
+    <Compile Include="Mvc\Test\RedirectToRouteResultTest.cs" />
+    <Compile Include="Mvc\Test\RouteCollectionExtensionsTest.cs" />
+    <Compile Include="Mvc\Test\SelectListTest.cs" />
+    <Compile Include="Mvc\Test\TagBuilderTest.cs" />
+    <Compile Include="Mvc\Test\TempDataDictionaryTest.cs" />
+    <Compile Include="Mvc\Test\TypeHelpersTest.cs" />
+    <Compile Include="Mvc\Test\UrlHelperTest.cs" />
+    <Compile Include="Mvc\Test\ViewDataDictionaryTest.cs" />
+    <Compile Include="Mvc\Test\ViewEnginesTest.cs" />
+    <Compile Include="Mvc\Test\ViewMasterPageTest.cs" />
+    <Compile Include="Mvc\Test\ViewPageTest.cs" />
+    <Compile Include="Mvc\Test\ViewResultTest.cs" />
+    <Compile Include="Mvc\Test\ViewUserControlTest.cs" />
+    <Compile Include="Mvc\Test\WebFormViewEngineTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SystemWebMvc\System.Web.Mvc.csproj">
+      <Project>{3D3FFD8A-624D-4E9B-954B-E1C105507975}</Project>
+      <Name>System.Web.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitTestUtil\UnitTestUtil.csproj">
+      <Project>{57FFC134-7F9D-4B97-8692-8D2C16714663}</Project>
+      <Name>UnitTestUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

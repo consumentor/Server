@@ -1,0 +1,11 @@
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Infrastructure\bin\Debug\Consumentor.ShopGun.Infrastructure.dll.config
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Infrastructure\bin\Debug\Consumentor.ShopGun.Infrastructure.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Infrastructure\bin\Debug\Consumentor.ShopGun.Infrastructure.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Infrastructure\bin\Debug\Castle.Core.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Infrastructure\bin\Debug\Castle.MicroKernel.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Infrastructure\bin\Debug\Castle.Services.Logging.Log4netIntegration.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Infrastructure\bin\Debug\Castle.Windsor.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Infrastructure\bin\Debug\Castle.DynamicProxy2.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Infrastructure\obj\Debug\Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Infrastructure\obj\Debug\Consumentor.ShopGun.Infrastructure.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Infrastructure\obj\Debug\Consumentor.ShopGun.Infrastructure.pdb

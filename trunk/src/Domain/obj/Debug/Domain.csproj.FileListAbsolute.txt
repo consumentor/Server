@@ -1,0 +1,5 @@
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Domain\bin\Debug\Consumentor.ShopGun.Domain.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Domain\bin\Debug\Consumentor.ShopGun.Domain.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Domain\obj\Debug\Consumentor.ShopGun.Domain.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\Src\Domain\obj\Debug\Consumentor.ShopGun.Domain.pdb

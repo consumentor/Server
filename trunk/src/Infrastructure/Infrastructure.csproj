@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A84D935A-05D0-43EE-A318-F9F5A62B9E1D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Consumentor.ShopGun</RootNamespace>
+    <AssemblyName>Consumentor.ShopGun.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\tools\Castle\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\tools\Castle\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.Log4netIntegration, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\tools\Castle\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\tools\Castle\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ActionCompletionEventArgs.cs" />
+    <Compile Include="ActionPerformer.cs" />
+    <Compile Include="ActionPerformerException.cs" />
+    <Compile Include="ActionPerformerFactory.cs" />
+    <Compile Include="ActionScheduler.cs" />
+    <Compile Include="ActionStartEventArgs.cs" />
+    <Compile Include="Component\ComponentLifestyle.cs" />
+    <Compile Include="Component\Container.cs" />
+    <Compile Include="Component\ContainerException.cs" />
+    <Compile Include="Component\ContainerFactory.cs" />
+    <Compile Include="Component\IContainer.cs" />
+    <Compile Include="Component\IContainerConfiguration.cs" />
+    <Compile Include="Component\IInstanceType.cs" />
+    <Compile Include="Component\IRegisterClassTypeFragment.cs" />
+    <Compile Include="Component\IRegisterComponentKeyFragment.cs" />
+    <Compile Include="Component\IRegisterServiceFragment.cs" />
+    <Compile Include="Component\RegisterComponent.cs" />
+    <Compile Include="Component\RegisterComponentFluentInterface.cs" />
+    <Compile Include="Component\RegisterServiceFragment.cs" />
+    <Compile Include="Configuration\BasicConfiguration.cs" />
+    <Compile Include="Configuration\ConfigurationBase.cs" />
+    <Compile Include="Configuration\ContainerConfiguration.cs" />
+    <Compile Include="Configuration\IConfiguration.cs" />
+    <Compile Include="Configuration\IContainerConfiguration.cs" />
+    <Compile Include="Configuration\IServiceCultureConfiguration.cs" />
+    <Compile Include="Configuration\IWebServiceConfiguration.cs" />
+    <Compile Include="Configuration\PrefixConfiguration.cs" />
+    <Compile Include="Configuration\ServiceCultureConfiguration.cs" />
+    <Compile Include="Configuration\WebServiceConfiguration.cs" />
+    <Compile Include="ConsoleProgramBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Context\IShopgunWebOperationContext.cs" />
+    <Compile Include="Context\ShopgunWebOperationContext.cs" />
+    <Compile Include="DataConvert.cs" />
+    <Compile Include="Md5Helper.cs" />
+    <Compile Include="ShopGunTime.cs" />
+    <Compile Include="FileSystem\FileChangeWatcher.cs" />
+    <Compile Include="FileSystem\FileShareAccessor.cs" />
+    <Compile Include="FileSystem\FolderChangeWatcher.cs" />
+    <Compile Include="FileSystem\IFileShareAccessor.cs" />
+    <Compile Include="IActionPerformer.cs" />
+    <Compile Include="IActionPerformerFactory.cs" />
+    <Compile Include="INamedAction.cs" />
+    <Compile Include="IScheduler.cs" />
+    <Compile Include="ISchedulerConfiguration.cs" />
+    <Compile Include="ISubscriberConfiguration.cs" />
+    <Compile Include="Log\CastleLoggerLogWrapper.cs" />
+    <Compile Include="Log\DataContextLog.cs" />
+    <Compile Include="Log\LogBase.cs" />
+    <Compile Include="Log\LogInterceptor.cs" />
+    <Compile Include="NamedAction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueueList.cs" />
+    <Compile Include="Repository\DataContext.cs" />
+    <Compile Include="Repository\IAttributeMappingSource.cs" />
+    <Compile Include="Repository\InMemoryRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\ISqlDependency.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\RepositoryBase.cs" />
+    <Compile Include="Repository\SqlDependency.cs" />
+    <Compile Include="Services\IReserveUri.cs" />
+    <Compile Include="Services\ServiceConfigurationManager.cs" />
+    <Compile Include="Services\ServiceHostBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\ServiceHostExtension.cs" />
+    <Compile Include="Services\ServiceName.cs" />
+    <Compile Include="Services\WebServiceHost.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\WindowsServiceInstallerBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\WinServiceHost.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TimeSpanExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="log.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

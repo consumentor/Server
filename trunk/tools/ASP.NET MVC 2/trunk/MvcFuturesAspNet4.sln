@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcFuturesAspNet4", "src\MvcFuturesAspNet4\MvcFuturesAspNet4.csproj", "{7032113F-33C1-45CE-BB3A-DED76F341C71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcFuturesAspNet4Test", "test\MvcFuturesAspNet4Test\MvcFuturesAspNet4Test.csproj", "{7A6D645B-D748-47BD-827E-7D45224D43AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7032113F-33C1-45CE-BB3A-DED76F341C71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7032113F-33C1-45CE-BB3A-DED76F341C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7032113F-33C1-45CE-BB3A-DED76F341C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7032113F-33C1-45CE-BB3A-DED76F341C71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A6D645B-D748-47BD-827E-7D45224D43AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A6D645B-D748-47BD-827E-7D45224D43AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A6D645B-D748-47BD-827E-7D45224D43AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A6D645B-D748-47BD-827E-7D45224D43AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

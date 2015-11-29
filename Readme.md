@@ -1,0 +1,1 @@
+This project contains the server code and a database backup. It’s quite outdated technology… Best to build a new server with more contemporary technology. 

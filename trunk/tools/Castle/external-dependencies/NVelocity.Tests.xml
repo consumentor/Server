@@ -1,0 +1,335 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NVelocity.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:NVelocity.Test.Commons.LRUMapTest">
+            <summary>
+            Tests for Commons.Collections.KeyedList
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.Extensions.CustomRenderingTestCase">
+            <summary>
+            This class exemplifies an extension to NVelocity rendering, using
+            the <see cref="T:NVelocity.App.Events.EventCartridge"/> to catch the 
+            <see cref="E:NVelocity.App.Events.EventCartridge.ReferenceInsertion"/> event.
+            </summary>
+        </member>
+        <member name="M:NVelocity.Test.Extensions.CustomRenderingTestCase.EventCartridge_ReferenceInsertion(System.Object,NVelocity.App.Events.ReferenceInsertionEventArgs)">
+            <summary>
+            This is a sample of an ReferenceInsertion handler that escapes objects into
+            XML strings. What matters for this handler is the topmost "escapable" or
+            "not escapable" specification.
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.Provider.BoolObj">
+            <summary>
+            simple class to test boolean property
+            introspection - can't use TestProvider
+            as there is a get( String )
+            and that comes before isProperty
+            in the search pattern
+            </summary>
+            <author> <a href="mailto:geirm@apache.org">Geir Magnusson Jr.</a></author>
+        </member>
+        <member name="T:NVelocity.Test.Provider.Child">
+            <summary>
+            Rudimentary class used in the testbed to test
+            introspection with subclasses of a particular
+            class.
+            </summary>
+            <author> <a href="mailto:jvanzyl@apache.org">Jason van Zyl</a> </author>
+            <version> $Id: Child.cs,v 1.3 2003/10/27 13:54:11 corts Exp $ </version>
+        </member>
+        <member name="T:NVelocity.Test.Provider.Person">
+             <summary>
+             Rudimentary class used in the testbed to test
+             introspection with subclasses of a particular
+             class.
+            
+             This class need to be greatly extended to
+             be useful :-)
+             </summary>
+             <author> <a href="mailto:jvanzyl@apache.org">Jason van Zyl</a></author>
+             <version> $Id: Person.cs,v 1.3 2003/10/27 13:54:11 corts Exp $</version>
+        </member>
+        <member name="T:NVelocity.Test.Provider.TestProvider">
+            <summary>
+            This class is used by the testbed. Instances of the class
+            are fed into the context that is set before the AST
+            is traversed and dynamic content generated.
+            </summary>
+            <author><a href="mailto:jvanzyl@apache.org">Jason van Zyl</a></author>
+        </member>
+        <member name="M:NVelocity.Test.Provider.TestProvider.chop(System.String,System.Int32)">
+             <summary> Chop i characters off the end of a string.
+             *
+             </summary>
+             <param name="str">String to chop.
+             </param>
+             <param name="i">Number of characters to chop.
+             </param>
+             <returns>String with processed answer.
+            
+             </returns>
+        </member>
+        <member name="M:NVelocity.Test.Provider.TestProvider.get(System.String)">
+            <summary> Test the ability of vel to use a get(key)
+            method for any object type, not just one
+            that implements the Map interface.
+            </summary>
+        </member>
+        <member name="M:NVelocity.Test.Provider.TestProvider.put(System.String,System.Object)">
+            <summary> Test the ability of vel to use a put(key)
+            method for any object type, not just one
+            that implements the Map interface.
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.TemplateTest">
+            <summary>
+            This is a base interface that contains a bunch of static final
+            strings that are of use when testing templates.
+            </summary>
+            <author> <a href="mailto:jon@latchkey.com">Jon S. Stevens</a></author>
+        </member>
+        <member name="F:NVelocity.Test.TemplateTest.TMPL_FILE_EXT">
+            <summary>
+            VTL file extension.
+            </summary>
+        </member>
+        <member name="F:NVelocity.Test.TemplateTest.CMP_FILE_EXT">
+            <summary>
+            Comparison file extension.
+            </summary>
+        </member>
+        <member name="F:NVelocity.Test.TemplateTest.RESULT_FILE_EXT">
+            <summary>
+            Comparison file extension.
+            </summary>
+        </member>
+        <member name="F:NVelocity.Test.TemplateTest.FILE_RESOURCE_LOADER_PATH">
+            <summary>
+            Path for templates. This property will override the
+            value in the default velocity properties file.
+            </summary>
+        </member>
+        <member name="F:NVelocity.Test.TemplateTest.TEST_CASE_PROPERTIES">
+            <summary>
+            Properties file that lists which template tests to run.
+            </summary>
+        </member>
+        <member name="F:NVelocity.Test.TemplateTest.RESULT_DIR">
+            <summary>
+            Results relative to the build directory.
+            </summary>
+        </member>
+        <member name="F:NVelocity.Test.TemplateTest.COMPARE_DIR">
+            <summary>
+            Results relative to the build directory.
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.BaseTestCase">
+            <summary>
+            Base test case that provides a few utility methods for
+            the rest of the tests.
+            </summary>
+            <author> <a href="mailto:dlr@finemaltcoding.com">Daniel Rall</a></author>
+        </member>
+        <member name="M:NVelocity.Test.BaseTestCase.GetFileName(System.String,System.String,System.String)">
+            <summary>
+            Concatenates the file name parts together appropriately.
+            </summary>
+            <returns>
+            The full path to the file.
+            </returns>
+        </member>
+        <member name="M:NVelocity.Test.BaseTestCase.AssureResultsDirectoryExists(System.String)">
+            <summary>
+            Assures that the results directory exists.  If the results directory
+            cannot be created, fails the test.
+            </summary>
+        </member>
+        <member name="M:NVelocity.Test.BaseTestCase.NormalizeNewlines(System.String)">
+            <summary>
+            Normalizes lines to account for platform differences.  Macs use
+            a single \r, DOS derived operating systems use \r\n, and Unix
+            uses \n.  Replace each with a single \n.
+            </summary>
+            <author> <a href="mailto:rubys@us.ibm.com">Sam Ruby</a>
+            </author>
+            <returns>
+            source with all line terminations changed to Unix style
+            </returns>
+        </member>
+        <member name="M:NVelocity.Test.BaseTestCase.IsMatch(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Returns whether the processed template matches the
+            content of the provided comparison file.
+            </summary>
+            <returns>
+            Whether the output matches the contents
+            of the comparison file.
+            </returns>
+        </member>
+        <member name="M:NVelocity.Test.BaseTestCase.GetTestCaseName(System.String)">
+            <summary>
+            Turns a base file name into a test case name.
+            </summary>
+            <param name="s">
+            The base file name.
+            </param>
+            <returns>
+            The test case name.
+            </returns>
+        </member>
+        <member name="T:NVelocity.Test.CommonsTest">
+            <summary>
+            Make sure that properties files are loaded correctly
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.ContextTest">
+            <summary>
+            Tests to make sure that the VelocityContext is functioning correctly
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.EncodingTestCase">
+            <summary>
+            Tests input encoding handling.  The input target is UTF-8, having
+            chinese and and a spanish enyay (n-twiddle)
+            
+            Thanks to Kent Johnson for the example input file.
+            </summary>
+            <author><a href="mailto:geirm@optonline.net">Geir Magnusson Jr.</a></author>
+            <version> $Id: EncodingTestCase.cs,v 1.4 2005/01/01 17:57:56 corts Exp $</version>
+        </member>
+        <member name="M:NVelocity.Test.EncodingTestCase.RunTest">
+            <summary>
+            Runs the test.
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.ForeachTest">
+            <summary>
+            Tests to make sure that the VelocityContext is functioning correctly
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.IntrospectorTest">
+            <summary>
+            Test Velocity Introspector
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.ObjectComparisonTestCase">
+            <summary>
+            Tests comparison of custom objects.
+            </summary>
+        </member>
+        <member name="M:NVelocity.Test.ObjectComparisonTestCase.CompareString">
+            <summary>
+            String does an alphabetical comparision, if you compare an object to a string, the
+            string value of that object will be used.  Char does an ascii comparison.
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.ParserTest">
+            <summary>
+            Test Velocity Introspector
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.TemplateTestCase">
+             <summary>
+             Easily add test cases which evaluate templates and check their output.
+            
+             NOTE:
+             This class DOES NOT extend RuntimeTestCase because the TemplateTestSuite
+             already initializes the Velocity runtime and adds the template
+             test cases. Having this class extend RuntimeTestCase causes the
+             Runtime to be initialized twice which is not good. I only discovered
+             this after a couple hours of wondering why all the properties
+             being setup were ending up as Vectors. At first I thought it
+             was a problem with the Configuration class, but the Runtime
+             was being initialized twice: so the first time the property
+             is seen it's stored as a String, the second time it's seen
+             the Configuration class makes a Vector with both Strings.
+             As a result all the getBoolean(property) calls were failing because
+             the Configurations class was trying to create a Boolean from
+             a Vector which doesn't really work that well. I have learned
+             my lesson and now have to add some code to make sure the
+             Runtime isn't initialized more then once :-)
+             </summary>
+        </member>
+        <member name="M:NVelocity.Test.TemplateTestCase.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:NVelocity.Test.TemplateTestCase.SetUp">
+            <summary>
+            Sets up the test.
+            </summary>
+        </member>
+        <member name="M:NVelocity.Test.TemplateTestCase.Test_Run">
+            <summary>
+            Adds the template test cases to run to this test suite.  Template test
+            cases are listed in the <code>TEST_CASE_PROPERTIES</code> file.
+            </summary>
+        </member>
+        <member name="M:NVelocity.Test.TemplateTestCase.getTemplateTestKey(System.Int32)">
+            <summary>
+            Macro which returns the properties file key for the specified template
+            test number.
+            </summary>
+            <param name="nbr">The template test number to return a property key for.</param>
+            <returns>The property key.</returns>
+        </member>
+        <member name="M:NVelocity.Test.TemplateTestCase.RunTest(System.String)">
+            <summary>
+            Runs the test.
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.VelocimacroTestCase">
+            <summary>
+            This class tests strange Velocimacro issues.
+            </summary>
+            <author> <a href="mailto:geirm@optonline.net">Geir Magnusson Jr.</a>
+            </author>
+        </member>
+        <member name="M:NVelocity.Test.VelocimacroTestCase.Test_Run">
+            <summary>
+            Runs the test.
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.VelocityAppTestCase">
+            <summary>
+            This class is intended to test the App.Velocity class.
+            </summary>
+            <author> <a href="mailto:geirm@optonline.net">Geir Magnusson Jr.</a>
+            </author>
+            <author> <a href="mailto:jon@latchkey.com">Jon S. Stevens</a>
+            </author>
+        </member>
+        <member name="M:NVelocity.Test.VelocityAppTestCase.Test_Run">
+            <summary>
+            Runs the test.
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.VelocityTest">
+            <summary>
+            Test Velocity processing
+            </summary>
+        </member>
+        <member name="T:NVelocity.Test.VTLTest">
+            <summary>
+            Test Velocity processing
+            </summary>
+        </member>
+        <member name="M:NVelocity.MultiThreadTestCase.ExecuteMethodUntilSignal1">
+            <summary>
+            This test starts a VelocityEngine for each execution
+            </summary>
+        </member>
+        <member name="M:NVelocity.MultiThreadTestCase.ExecuteMethodUntilSignal2">
+            <summary>
+            This test uses the previously created velocity engine
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Consumentor.ShopGun.Gateway.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Consumentor_ShopGun_Gateway_se_mediabanken_www_ProductService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.mediabanken.se/WS/Consumentor/ProductService.asmx</Value>
+    </Setting>
+    <Setting Name="Consumentor_ShopGun_Gateway_se_gs1_gepir_router" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://gepir.gs1.se/router/router.asmx</Value>
+    </Setting>
+    <Setting Name="Consumentor_ShopGun_Gateway_org_gs1_gepir_router" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://gepir.gs1.org/V31/router.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

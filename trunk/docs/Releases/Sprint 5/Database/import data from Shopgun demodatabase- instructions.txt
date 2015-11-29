@@ -1,0 +1,18 @@
+Run the SQL-Scripts below in following order:
+
+
+1. ImportBrands.sql
+
+2. ImportMentor.sql
+
+3. ImportProducts.sql
+
+4. ImportSemaphore.sql (INSERT)
+
+5. ImportPurchaseAdvise.sql
+
+6. ImportIngredients.sql
+
+7. ImportIngredientAdvise.sql
+
+8. ImportSemaphore.sql (UPDATE)

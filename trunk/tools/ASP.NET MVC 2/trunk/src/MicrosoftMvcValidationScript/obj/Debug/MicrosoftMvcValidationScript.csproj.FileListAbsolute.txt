@@ -1,0 +1,2 @@
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\src\MicrosoftMvcValidationScript\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\src\MicrosoftMvcValidationScript\obj\Debug\MicrosoftMvcValidation.dll

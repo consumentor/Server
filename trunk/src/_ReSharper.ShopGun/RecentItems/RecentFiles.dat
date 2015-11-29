@@ -1,0 +1,66 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/f:BrandApplicationService.cs" caret="2479" fromTop="0" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:Mapper/f:GepirCompanyMapper.cs" caret="2098" fromTop="34" />
+    <File id="776549B3-F2FD-4377-9635-34BD8A7A6AC1/d:Web References/d:org.gs1.gepir/f:Reference.cs" caret="2469" fromTop="20" />
+    <File id="776549B3-F2FD-4377-9635-34BD8A7A6AC1/d:Properties/f:Settings.Designer.cs" caret="2195" fromTop="21" />
+    <File id="776549B3-F2FD-4377-9635-34BD8A7A6AC1/d:Web References/d:se.gs1.gepir/f:Reference.cs" caret="2375" fromTop="21" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/f:ConnectionStrings.config" caret="0" fromTop="0" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/f:IAdviceSearchApplicationService.cs" caret="233" fromTop="7" />
+    <File id="776549B3-F2FD-4377-9635-34BD8A7A6AC1/f:app.config" caret="0" fromTop="0" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/f:App.config" caret="1186" fromTop="19" />
+    <File id="CF17F623-A491-426C-A708-6E5A64446B62/f:Product.cs" caret="4929" fromTop="34" />
+    <File id="A666A8ED-A08E-4896-9010-28977074DF74/d:ExternalInformationProvider/f:GepirProductInformationDomainService.cs" caret="3110" fromTop="13" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:AdviceSearchWebService.cs" caret="1179" fromTop="26" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/f:AdviceSearchApplicationService.cs" caret="3368" fromTop="24" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/f:ProductApplicationService.cs" caret="15649" fromTop="16" />
+    <File id="776549B3-F2FD-4377-9635-34BD8A7A6AC1/d:Server/f:ShopgunMembershipWebserviceGateway.cs" caret="237" fromTop="6" />
+    <File id="B20C9217-56F5-42CB-9EA1-D2BC4F18C668/f:JSONHelper.cs" caret="309" fromTop="11" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:IShopgunMembershipContract.cs" caret="1354" fromTop="25" />
+    <File id="CF17F623-A491-426C-A708-6E5A64446B62/f:UserAdviceRating.cs" caret="2075" fromTop="29" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:IShopgunAppContract.cs" caret="12684" fromTop="21" />
+    <File id="CF17F623-A491-426C-A708-6E5A64446B62/f:AdviceBase.cs" caret="8277" fromTop="12" />
+    <File id="A84D935A-05D0-43EE-A318-F9F5A62B9E1D/d:Log/f:LogInterceptor.cs" caret="864" fromTop="14" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:ShopgunAppWebService.cs" caret="33028" fromTop="3" />
+    <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:ShopGun.CCNET.Install.config/s:..?..?ShopGun.CCNET.Install.config" caret="2082" fromTop="22" />
+    <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:go.cmd/s:..?..?go.cmd" caret="0" fromTop="0" />
+    <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:Install.targets/s:..?..?Install.targets" caret="3589" fromTop="15" />
+    <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:ShopGun.msbuild/s:..?..?ShopGun.msbuild" caret="737" fromTop="14" />
+    <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:goInstaller.cmd/s:..?..?goInstaller.cmd" caret="95" fromTop="0" />
+    <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:ccnet.config/s:..?..?tools?CCNET?server?ccnet.config" caret="655" fromTop="14" />
+    <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:ShopGun.CCNET.build.config/s:..?..?ShopGun.CCNET.build.config" caret="0" fromTop="0" />
+    <File id="A84D935A-05D0-43EE-A318-F9F5A62B9E1D/f:ConsoleProgramBase.cs" caret="4682" fromTop="14" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="A666A8ED-A08E-4896-9010-28977074DF74/d:ExternalInformationProvider/f:GepirProductInformationDomainService.cs" caret="4995" fromTop="21" />
+    <File id="CF17F623-A491-426C-A708-6E5A64446B62/f:Product.cs" caret="4926" fromTop="34" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/f:ProductApplicationService.cs" caret="2060" fromTop="0" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/f:ProductApplicationService.cs" caret="4244" fromTop="40" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/f:ProductApplicationService.cs" caret="4202" fromTop="40" />
+    <File id="A666A8ED-A08E-4896-9010-28977074DF74/d:ExternalInformationProvider/f:GepirProductInformationDomainService.cs" caret="2571" fromTop="16" />
+    <File id="A666A8ED-A08E-4896-9010-28977074DF74/d:ExternalInformationProvider/f:GepirProductInformationDomainService.cs" caret="10204" fromTop="25" />
+    <File id="A666A8ED-A08E-4896-9010-28977074DF74/d:ExternalInformationProvider/f:GepirProductInformationDomainService.cs" caret="10205" fromTop="25" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/f:App.config" caret="2575" fromTop="19" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/f:App.config" caret="1107" fromTop="18" />
+    <File id="A84D935A-05D0-43EE-A318-F9F5A62B9E1D/d:Log/f:LogInterceptor.cs" caret="2571" fromTop="17" />
+    <File id="A666A8ED-A08E-4896-9010-28977074DF74/d:ExternalInformationProvider/f:GepirProductInformationDomainService.cs" caret="3114" fromTop="13" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/f:ProductApplicationService.cs" caret="3965" fromTop="38" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:IShopgunAppContract.cs" caret="12758" fromTop="28" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:ShopgunAppWebService.cs" caret="31207" fromTop="36" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:ShopgunAppWebService.cs" caret="30300" fromTop="16" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:ShopgunAppWebService.cs" caret="30864" fromTop="25" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:IShopgunAppContract.cs" caret="12758" fromTop="28" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:ShopgunAppWebService.cs" caret="30727" fromTop="20" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:IShopgunAppContract.cs" caret="12758" fromTop="22" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:ShopgunAppWebService.cs" caret="1047" fromTop="20" />
+    <File id="CF17F623-A491-426C-A708-6E5A64446B62/f:UserAdviceRating.cs" caret="2034" fromTop="26" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:ShopgunAppWebService.cs" caret="32823" fromTop="28" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:IShopgunAppContract.cs" caret="12414" fromTop="21" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:ShopgunAppWebService.cs" caret="33297" fromTop="37" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:ShopgunAppWebService.cs" caret="33877" fromTop="34" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:ShopgunAppWebService.cs" caret="33935" fromTop="31" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:ShopgunAppWebService.cs" caret="33319" fromTop="20" />
+    <File id="0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:IShopgunAppContract.cs" caret="12684" fromTop="21" />
+    <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:ShopGun.msbuild/s:..?..?ShopGun.msbuild" caret="737" fromTop="14" />
+  </RecentEdits>
+</RecentFiles>

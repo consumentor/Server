@@ -1,0 +1,17 @@
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\DomainServiceSpec.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\DomainServiceSpec.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\Consumentor.ShopGun.Domain.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\Consumentor.ShopGun.Infrastructure.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\NBehave.Spec.Framework.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\NBehave.Spec.NUnit.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\Castle.Core.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\Castle.Windsor.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\Castle.MicroKernel.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\Rhino.Mocks.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\nunit.framework.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\Castle.DynamicProxy2.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\Consumentor.ShopGun.Domain.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\bin\Release\Consumentor.ShopGun.Infrastructure.pdb
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\obj\Release\DomainServiceSpec.csprojResolveAssemblyReference.cache
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\obj\Release\DomainServiceSpec.dll
+C:\Users\Simon\Consumentor\SVN\Shopgun\trunk\src\Spec_and_Test\DomainServiceSpec\obj\Release\DomainServiceSpec.pdb

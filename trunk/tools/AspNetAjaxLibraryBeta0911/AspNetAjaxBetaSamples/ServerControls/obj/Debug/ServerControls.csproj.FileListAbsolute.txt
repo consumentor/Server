@@ -1,0 +1,28 @@
+C:\LocalDocs\VS2008 Projects\SDRDemosSept2009\ServerControls\bin\Debug\SDRServerControls.dll
+C:\LocalDocs\VS2008 Projects\SDRDemosSept2009\ServerControls\bin\Debug\SDRServerControls.pdb
+C:\LocalDocs\VS2008 Projects\SDRDemosSept2009\ServerControls\obj\Debug\ResolveAssemblyReference.cache
+C:\LocalDocs\VS2008 Projects\SDRDemosSept2009\ServerControls\obj\Debug\SDRServerControls.ClientControls.resources
+C:\LocalDocs\VS2008 Projects\SDRDemosSept2009\ServerControls\obj\Debug\ServerControls.csproj.GenerateResource.Cache
+C:\LocalDocs\VS2008 Projects\SDRDemosSept2009\ServerControls\obj\Debug\SDRServerControls.dll
+C:\LocalDocs\VS2008 Projects\SDRDemosSept2009\ServerControls\obj\Debug\SDRServerControls.pdb
+C:\LocalDocs\VS2008 Projects\Preview6SamplesDraft\ServerControls\bin\Debug\SDRServerControls.dll
+C:\LocalDocs\VS2008 Projects\Preview6SamplesDraft\ServerControls\bin\Debug\SDRServerControls.pdb
+C:\LocalDocs\VS2008 Projects\Preview6SamplesDraft\ServerControls\obj\Debug\ResolveAssemblyReference.cache
+C:\LocalDocs\VS2008 Projects\Preview6SamplesDraft\ServerControls\obj\Debug\SDRServerControls.ClientControls.resources
+C:\LocalDocs\VS2008 Projects\Preview6SamplesDraft\ServerControls\obj\Debug\ServerControls.csproj.GenerateResource.Cache
+C:\LocalDocs\VS2008 Projects\Preview6SamplesDraft\ServerControls\obj\Debug\SDRServerControls.dll
+C:\LocalDocs\VS2008 Projects\Preview6SamplesDraft\ServerControls\obj\Debug\SDRServerControls.pdb
+C:\Users\jimwa\Desktop\BetaSamples\BetaSamples\ServerControls\bin\Debug\SDRServerControls.dll
+C:\Users\jimwa\Desktop\BetaSamples\BetaSamples\ServerControls\bin\Debug\SDRServerControls.pdb
+C:\Users\jimwa\Desktop\BetaSamples\BetaSamples\ServerControls\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jimwa\Desktop\BetaSamples\BetaSamples\ServerControls\obj\Debug\SDRServerControls.ClientControls.resources
+C:\Users\jimwa\Desktop\BetaSamples\BetaSamples\ServerControls\obj\Debug\ServerControls.csproj.GenerateResource.Cache
+C:\Users\jimwa\Desktop\BetaSamples\BetaSamples\ServerControls\obj\Debug\SDRServerControls.dll
+C:\Users\jimwa\Desktop\BetaSamples\BetaSamples\ServerControls\obj\Debug\SDRServerControls.pdb
+C:\LocalDocs\VS2008 Projects\PDCAJAXBetaSamples\BetaSamples\ServerControls\bin\Debug\SDRServerControls.dll
+C:\LocalDocs\VS2008 Projects\PDCAJAXBetaSamples\BetaSamples\ServerControls\bin\Debug\SDRServerControls.pdb
+C:\LocalDocs\VS2008 Projects\PDCAJAXBetaSamples\BetaSamples\ServerControls\obj\Debug\ResolveAssemblyReference.cache
+C:\LocalDocs\VS2008 Projects\PDCAJAXBetaSamples\BetaSamples\ServerControls\obj\Debug\SDRServerControls.ClientControls.resources
+C:\LocalDocs\VS2008 Projects\PDCAJAXBetaSamples\BetaSamples\ServerControls\obj\Debug\ServerControls.csproj.GenerateResource.Cache
+C:\LocalDocs\VS2008 Projects\PDCAJAXBetaSamples\BetaSamples\ServerControls\obj\Debug\SDRServerControls.dll
+C:\LocalDocs\VS2008 Projects\PDCAJAXBetaSamples\BetaSamples\ServerControls\obj\Debug\SDRServerControls.pdb

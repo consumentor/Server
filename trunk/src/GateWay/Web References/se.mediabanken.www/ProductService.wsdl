@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mediabanken.se/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.mediabanken.se/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mediabanken.se/">
+      <s:element name="TestAuthorization">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestAuthorizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestAuthorizationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetProductData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eanVec" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProductDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductDataResult" type="tns:ArrayOfProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Product">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ListProduct">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nutrition" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Storage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Durability" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SuppArtNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Allergies" type="tns:ArrayOfAllergyInfo" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ListProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageURL_Jpg66px" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageURL_Jpg150px" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageURL_Jpg300px" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Supplier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Trademark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightVolume" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Markings" type="tns:ArrayOfMarkInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMarkInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MarkInfo" nillable="true" type="tns:MarkInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MarkInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MarkId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MarkName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAllergyInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AllergyInfo" nillable="true" type="tns:AllergyInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AllergyInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SubstanceName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Contains" type="tns:ContainsAllergenic" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ContainsAllergenic">
+        <s:restriction base="s:string">
+          <s:enumeration value="No" />
+          <s:enumeration value="Possible" />
+          <s:enumeration value="Yes" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetProductListData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eanVec" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductListDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductListDataResult" type="tns:ArrayOfListProduct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfListProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ListProduct" nillable="true" type="tns:ListProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllAvailableEANs">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllAvailableEANsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAvailableEANsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChangedProductsEANs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="changedAfter" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChangedProductsEANsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChangedProductsEANsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TestAuthorizationSoapIn">
+    <wsdl:part name="parameters" element="tns:TestAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="TestAuthorizationSoapOut">
+    <wsdl:part name="parameters" element="tns:TestAuthorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestAuthorizationAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetProductDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductData" />
+  </wsdl:message>
+  <wsdl:message name="GetProductDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductDataAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductListData" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductListDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListDataAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAvailableEANsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAvailableEANs" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAvailableEANsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAvailableEANsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAvailableEANsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetChangedProductsEANsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChangedProductsEANs" />
+  </wsdl:message>
+  <wsdl:message name="GetChangedProductsEANsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChangedProductsEANsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChangedProductsEANsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="ProductServiceSoap">
+    <wsdl:operation name="TestAuthorization">
+      <wsdl:input message="tns:TestAuthorizationSoapIn" />
+      <wsdl:output message="tns:TestAuthorizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductData">
+      <wsdl:input message="tns:GetProductDataSoapIn" />
+      <wsdl:output message="tns:GetProductDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductListData">
+      <wsdl:input message="tns:GetProductListDataSoapIn" />
+      <wsdl:output message="tns:GetProductListDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAvailableEANs">
+      <wsdl:input message="tns:GetAllAvailableEANsSoapIn" />
+      <wsdl:output message="tns:GetAllAvailableEANsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChangedProductsEANs">
+      <wsdl:input message="tns:GetChangedProductsEANsSoapIn" />
+      <wsdl:output message="tns:GetChangedProductsEANsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProductServiceSoap" type="tns:ProductServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestAuthorization">
+      <soap:operation soapAction="http://www.mediabanken.se/TestAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TestAuthorizationAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductData">
+      <soap:operation soapAction="http://www.mediabanken.se/GetProductData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetProductDataAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductListData">
+      <soap:operation soapAction="http://www.mediabanken.se/GetProductListData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetProductListDataAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAvailableEANs">
+      <soap:operation soapAction="http://www.mediabanken.se/GetAllAvailableEANs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllAvailableEANsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChangedProductsEANs">
+      <soap:operation soapAction="http://www.mediabanken.se/GetChangedProductsEANs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetChangedProductsEANsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProductServiceSoap12" type="tns:ProductServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestAuthorization">
+      <soap12:operation soapAction="http://www.mediabanken.se/TestAuthorization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TestAuthorizationAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductData">
+      <soap12:operation soapAction="http://www.mediabanken.se/GetProductData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetProductDataAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductListData">
+      <soap12:operation soapAction="http://www.mediabanken.se/GetProductListData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetProductListDataAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAvailableEANs">
+      <soap12:operation soapAction="http://www.mediabanken.se/GetAllAvailableEANs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllAvailableEANsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChangedProductsEANs">
+      <soap12:operation soapAction="http://www.mediabanken.se/GetChangedProductsEANs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetChangedProductsEANsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductService">
+    <wsdl:port name="ProductServiceSoap" binding="tns:ProductServiceSoap">
+      <soap:address location="http://www.mediabanken.se/WS/Consumentor/ProductService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ProductServiceSoap12" binding="tns:ProductServiceSoap12">
+      <soap12:address location="http://www.mediabanken.se/WS/Consumentor/ProductService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

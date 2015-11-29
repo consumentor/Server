@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s0="http://gepir.ean.ch/Request" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.gepir.org/" xmlns:s1="http://gepir.ean.ch/Response" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.gepir.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gepir Router Version 3.1.079 14.12.10</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://gepir.ean.ch/Request">
+      <s:element name="GepirVersion2Request">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://gepir.ean.ch/Response">
+      <s:element name="GepirVersion2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GepirVersion2Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.gepir.org/">
+      <s:import namespace="http://www.w3.org/XML/1998/namespace" />
+      <s:element name="GetPartyByGLN" type="tns:GetPartyByGLN" />
+      <s:complexType name="GetPartyByGLN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="requestedGln" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestedLanguages" type="tns:ArrayOfLanguage" />
+        </s:sequence>
+        <s:attribute name="version" type="s:decimal" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfLanguage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="language" type="s:language" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="gepirParty" type="tns:gepirParty" />
+      <s:complexType name="gepirParty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="partyDataLine" type="tns:partyDataLineType" />
+        </s:sequence>
+        <s:attribute name="version" type="s:decimal" use="required" />
+      </s:complexType>
+      <s:complexType name="partyDataLineType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="gln" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="returnCode" type="s:nonNegativeInteger" />
+          <s:element minOccurs="0" maxOccurs="1" name="informationProviderGln" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastChangeDateTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="gcp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="additionalPartyId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="partyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="streetAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pOBoxNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subDivision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="countryISOCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="contact" type="tns:partyContactType" />
+          <s:element minOccurs="0" maxOccurs="1" name="partyRole" type="tns:partyRoleListType" />
+          <s:element minOccurs="0" maxOccurs="1" name="partyContainment" type="tns:ArrayOfPartyChildType" />
+        </s:sequence>
+        <s:attribute ref="xml:lang" use="optional" />
+      </s:complexType>
+      <s:complexType name="partyContactType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="contactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="communicationChannel" type="tns:CommunicationChannelType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CommunicationChannelType">
+        <s:simpleContent>
+          <s:extension base="s:string">
+            <s:attribute name="communicationChannelCode" type="tns:CommunicationChannelCodeType" use="required" />
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:simpleType name="CommunicationChannelCodeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="TELEPHONE" />
+          <s:enumeration value="TELEFAX" />
+          <s:enumeration value="EMAIL" />
+          <s:enumeration value="WEBSITE" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="partyRoleListType">
+        <s:restriction base="s:string">
+          <s:enumeration value="BILL_TO" />
+          <s:enumeration value="BUYER" />
+          <s:enumeration value="CONSUMER" />
+          <s:enumeration value="CORPORATE_IDENTITY" />
+          <s:enumeration value="DELIVERY_PARTY" />
+          <s:enumeration value="DISTRIBUTOR_AND_OR_BROKER" />
+          <s:enumeration value="INFORMATION_PROVIDER" />
+          <s:enumeration value="INVOICEE" />
+          <s:enumeration value="ISSUER_OF_INVOICE" />
+          <s:enumeration value="LOGISTICS_SERVICE_PROVIDER" />
+          <s:enumeration value="MANUFACTURING_PLANT" />
+          <s:enumeration value="MARK_FOR" />
+          <s:enumeration value="MESSAGE_FROM" />
+          <s:enumeration value="MESSAGE_RECIPIENT" />
+          <s:enumeration value="OPERATOR" />
+          <s:enumeration value="PARTY_TO_RECEIVE_COMMERCIAL_INVOICE" />
+          <s:enumeration value="PAYEE" />
+          <s:enumeration value="PAYER" />
+          <s:enumeration value="SELLER" />
+          <s:enumeration value="SHIP_FROM" />
+          <s:enumeration value="SHIP_TO" />
+          <s:enumeration value="STORE" />
+          <s:enumeration value="SUPPLIER" />
+          <s:enumeration value="WAREHOUSE_AND_OR_DEPOT" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfPartyChildType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="partyChild" type="tns:partyChildType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="partyChildType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="partyChildRole" type="tns:partyRoleListType" />
+          <s:element minOccurs="0" maxOccurs="1" name="gln" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="gepirRequestHeader" type="tns:gepirRequestHeader" />
+      <s:complexType name="gepirRequestHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requesterGln" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cascade" type="s:int" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="gepirResponseHeader" type="tns:gepirResponseHeader" />
+      <s:complexType name="gepirResponseHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="responderGln" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="numberOfHits" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="returnCode" type="s:int" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetOwnerOfGLN" type="tns:GetOwnerOfGLN" />
+      <s:complexType name="GetOwnerOfGLN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requestedGln" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestedLanguages" type="tns:ArrayOfLanguage" />
+        </s:sequence>
+        <s:attribute name="version" type="s:decimal" use="required" />
+      </s:complexType>
+      <s:element name="GetPartyByGTIN" type="tns:GetPartyByGTIN" />
+      <s:complexType name="GetPartyByGTIN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="requestedGtin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestedLanguages" type="tns:ArrayOfLanguage" />
+        </s:sequence>
+        <s:attribute name="version" type="s:decimal" use="required" />
+      </s:complexType>
+      <s:element name="GetPartyBySSCC" type="tns:GetPartyBySSCC" />
+      <s:complexType name="GetPartyBySSCC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requestedSscc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestedLanguages" type="tns:ArrayOfLanguage" />
+        </s:sequence>
+        <s:attribute name="version" type="s:decimal" use="required" />
+      </s:complexType>
+      <s:element name="GetPartyByName" type="tns:GetPartyByName" />
+      <s:complexType name="GetPartyByName">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requestedPartyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestedStreetAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestedPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestedCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestedCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestedKeywords" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestedLanguages" type="tns:ArrayOfLanguage" />
+        </s:sequence>
+        <s:attribute name="version" type="s:decimal" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="keyword" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetItemByGTIN" type="tns:GetItemByGTIN" />
+      <s:complexType name="GetItemByGTIN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requestedGtin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestedLanguages" type="tns:ArrayOfLanguage" />
+        </s:sequence>
+        <s:attribute default="3.10" name="version" type="s:decimal" />
+      </s:complexType>
+      <s:element name="gepirItem" type="tns:gepirItem" />
+      <s:complexType name="gepirItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="itemDataLine" type="tns:itemDataLineType" />
+        </s:sequence>
+        <s:attribute default="3.10" name="version" type="s:decimal" />
+      </s:complexType>
+      <s:complexType name="itemDataLineType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="gtin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="informationProviderGln" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="manufacturerGln" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="brandName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="tradeItemUnitDescriptor" type="tns:itemDataLineTypeTradeItemUnitDescriptor" />
+          <s:element minOccurs="0" maxOccurs="1" name="descriptiveSize" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="netContent" type="tns:itemDataLineTypeNetContent" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="linkUri" type="tns:itemDataLineTypeLinkUri" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="classificationCode" type="tns:classificationCodeType" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastChangeDateTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="childItems" type="tns:ArrayOfItemDataLineTypeChildItemsChildItem" />
+        </s:sequence>
+        <s:attribute default="en" name="lang" type="s:language" />
+      </s:complexType>
+      <s:simpleType name="itemDataLineTypeTradeItemUnitDescriptor">
+        <s:restriction base="s:string">
+          <s:enumeration value="BASE_UNIT_OR_EACH" />
+          <s:enumeration value="PACK_OR_INNER_PACK" />
+          <s:enumeration value="CASE" />
+          <s:enumeration value="DISPLAY_SHIPPER" />
+          <s:enumeration value="PALLET" />
+          <s:enumeration value="MIXED_MODULE" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="itemDataLineTypeNetContent">
+        <s:simpleContent>
+          <s:extension base="s:string">
+            <s:attribute name="uom" type="tns:uomType" use="required" />
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:simpleType name="uomType">
+        <s:restriction base="s:string">
+          <s:enumeration value="PCE" />
+          <s:enumeration value="GRM" />
+          <s:enumeration value="KGM" />
+          <s:enumeration value="LBS" />
+          <s:enumeration value="MLT" />
+          <s:enumeration value="LTR" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="itemDataLineTypeLinkUri">
+        <s:simpleContent>
+          <s:extension base="s:anyURI">
+            <s:attribute name="format" type="tns:itemDataLineTypeLinkUriFormat" use="required" />
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:simpleType name="itemDataLineTypeLinkUriFormat">
+        <s:restriction base="s:string">
+          <s:enumeration value="html" />
+          <s:enumeration value="xml" />
+          <s:enumeration value="text" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="classificationCodeType">
+        <s:simpleContent>
+          <s:extension base="s:string">
+            <s:attribute name="classificationSystemCode" type="tns:classificationCodeTypeClassificationSystemCode" use="required" />
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:simpleType name="classificationCodeTypeClassificationSystemCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="UNSPSC" />
+          <s:enumeration value="ISIC" />
+          <s:enumeration value="GPC" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfItemDataLineTypeChildItemsChildItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="childItem" type="tns:itemDataLineTypeChildItemsChildItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="itemDataLineTypeChildItemsChildItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="gtin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numberContained" type="s:positiveInteger" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStatistics" type="tns:GetStatistics" />
+      <s:complexType name="GetStatistics">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requestedCountry" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="periodBegin" type="s:date" />
+          <s:element minOccurs="1" maxOccurs="1" name="periodEnd" type="s:date" />
+        </s:sequence>
+        <s:attribute default="3.10" name="version" type="s:decimal" />
+      </s:complexType>
+      <s:element name="gepirStatistics" type="tns:gepirStatistics" />
+      <s:complexType name="gepirStatistics">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="periodBegin" type="s:date" />
+          <s:element minOccurs="1" maxOccurs="1" name="periodEnd" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="statisticsLine" type="tns:gepirStatisticsLine" />
+        </s:sequence>
+        <s:attribute default="3.10" name="version" type="s:decimal" />
+      </s:complexType>
+      <s:complexType name="gepirStatisticsLine">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="countryISOCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Counters" type="tns:gepirStatisticsLineCounters" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CountHits" type="tns:gepirStatisticsLineCountHits" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="gepirStatisticsLineCounters">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CountGCP" type="s:nonNegativeInteger" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountGLN" type="s:nonNegativeInteger" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountGTIN" type="s:nonNegativeInteger" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CountClient" type="tns:gepirStatisticsLineCountersCountClient" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="gepirStatisticsLineCountersCountClient">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HitCount" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="gepirStatisticsLineCountHits">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Hits" type="tns:gepirStatisticsLineCountHitsHits" />
+        </s:sequence>
+        <s:attribute form="qualified" name="Method" type="tns:gepirStatisticsLineCountHitsMethod" />
+      </s:complexType>
+      <s:complexType name="gepirStatisticsLineCountHitsHits">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requesterGln" type="s:nonNegativeInteger" />
+          <s:element minOccurs="0" maxOccurs="1" name="HitCount" type="s:nonNegativeInteger" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="gepirStatisticsLineCountHitsMethod">
+        <s:restriction base="s:string">
+          <s:enumeration value="GetItemByGTIN" />
+          <s:enumeration value="GetOwnerOfGLN" />
+          <s:enumeration value="GetPartyByGLN" />
+          <s:enumeration value="GetPartyByGTIN" />
+          <s:enumeration value="GetPartyByName" />
+          <s:enumeration value="GetPartyBySSCC" />
+          <s:enumeration value="GetStatistics" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetAuthorization" type="tns:GetAuthorization" />
+      <s:complexType name="GetAuthorization">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requestedGln" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestedIp" type="s:string" />
+        </s:sequence>
+        <s:attribute default="3.10" name="version" type="s:decimal" />
+      </s:complexType>
+      <s:element name="gepirAuthorization" type="tns:gepirAuthorization" />
+      <s:complexType name="gepirAuthorization">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="gln" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="partyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="authorization_level" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="added" type="s:date" />
+          <s:element minOccurs="1" maxOccurs="1" name="updated" type="s:date" />
+        </s:sequence>
+        <s:attribute default="3.10" name="version" type="s:decimal" />
+      </s:complexType>
+      <s:element name="SessionAuthorize">
+        <s:complexType />
+      </s:element>
+      <s:element name="SessionAuthorizeResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GepirVersion2SoapIn">
+    <wsdl:part name="parameters" element="s0:GepirVersion2Request" />
+  </wsdl:message>
+  <wsdl:message name="GepirVersion2SoapOut">
+    <wsdl:part name="parameters" element="s1:GepirVersion2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyByGLNSoapIn">
+    <wsdl:part name="partyGln" element="tns:GetPartyByGLN" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyByGLNSoapOut">
+    <wsdl:part name="GetPartyByGLNResult" element="tns:gepirParty" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyByGLNgepirRequestHeader">
+    <wsdl:part name="gepirRequestHeader" element="tns:gepirRequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyByGLNgepirResponseHeader">
+    <wsdl:part name="gepirResponseHeader" element="tns:gepirResponseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetOwnerOfGLNSoapIn">
+    <wsdl:part name="ownerGln" element="tns:GetOwnerOfGLN" />
+  </wsdl:message>
+  <wsdl:message name="GetOwnerOfGLNSoapOut">
+    <wsdl:part name="GetOwnerOfGLNResult" element="tns:gepirParty" />
+  </wsdl:message>
+  <wsdl:message name="GetOwnerOfGLNgepirRequestHeader">
+    <wsdl:part name="gepirRequestHeader" element="tns:gepirRequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetOwnerOfGLNgepirResponseHeader">
+    <wsdl:part name="gepirResponseHeader" element="tns:gepirResponseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyByGTINSoapIn">
+    <wsdl:part name="partyGtin" element="tns:GetPartyByGTIN" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyByGTINSoapOut">
+    <wsdl:part name="GetPartyByGTINResult" element="tns:gepirParty" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyByGTINgepirRequestHeader">
+    <wsdl:part name="gepirRequestHeader" element="tns:gepirRequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyByGTINgepirResponseHeader">
+    <wsdl:part name="gepirResponseHeader" element="tns:gepirResponseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyBySSCCSoapIn">
+    <wsdl:part name="partySscc" element="tns:GetPartyBySSCC" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyBySSCCSoapOut">
+    <wsdl:part name="GetPartyBySSCCResult" element="tns:gepirParty" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyBySSCCgepirRequestHeader">
+    <wsdl:part name="gepirRequestHeader" element="tns:gepirRequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyBySSCCgepirResponseHeader">
+    <wsdl:part name="gepirResponseHeader" element="tns:gepirResponseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyByNameSoapIn">
+    <wsdl:part name="requestData" element="tns:GetPartyByName" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyByNameSoapOut">
+    <wsdl:part name="GetPartyByNameResult" element="tns:gepirParty" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyByNamegepirRequestHeader">
+    <wsdl:part name="gepirRequestHeader" element="tns:gepirRequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPartyByNamegepirResponseHeader">
+    <wsdl:part name="gepirResponseHeader" element="tns:gepirResponseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetItemByGTINSoapIn">
+    <wsdl:part name="requestItem" element="tns:GetItemByGTIN" />
+  </wsdl:message>
+  <wsdl:message name="GetItemByGTINSoapOut">
+    <wsdl:part name="GetItemByGTINResult" element="tns:gepirItem" />
+  </wsdl:message>
+  <wsdl:message name="GetItemByGTINgepirRequestHeader">
+    <wsdl:part name="gepirRequestHeader" element="tns:gepirRequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetItemByGTINgepirResponseHeader">
+    <wsdl:part name="gepirResponseHeader" element="tns:gepirResponseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsSoapIn">
+    <wsdl:part name="requestStat" element="tns:GetStatistics" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsSoapOut">
+    <wsdl:part name="GetStatisticsResult" element="tns:gepirStatistics" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsgepirRequestHeader">
+    <wsdl:part name="gepirRequestHeader" element="tns:gepirRequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsgepirResponseHeader">
+    <wsdl:part name="gepirResponseHeader" element="tns:gepirResponseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAuthorizationSoapIn">
+    <wsdl:part name="requestAuthorization" element="tns:GetAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="GetAuthorizationSoapOut">
+    <wsdl:part name="GetAuthorizationResult" element="tns:gepirAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="GetAuthorizationgepirRequestHeader">
+    <wsdl:part name="gepirRequestHeader" element="tns:gepirRequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAuthorizationgepirResponseHeader">
+    <wsdl:part name="gepirResponseHeader" element="tns:gepirResponseHeader" />
+  </wsdl:message>
+  <wsdl:message name="SessionAuthorizeSoapIn">
+    <wsdl:part name="parameters" element="tns:SessionAuthorize" />
+  </wsdl:message>
+  <wsdl:message name="SessionAuthorizeSoapOut">
+    <wsdl:part name="parameters" element="tns:SessionAuthorizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GepirVersion2HttpGetIn" />
+  <wsdl:message name="GepirVersion2HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="SessionAuthorizeHttpGetIn" />
+  <wsdl:message name="SessionAuthorizeHttpGetOut" />
+  <wsdl:message name="GepirVersion2HttpPostIn" />
+  <wsdl:message name="GepirVersion2HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="SessionAuthorizeHttpPostIn" />
+  <wsdl:message name="SessionAuthorizeHttpPostOut" />
+  <wsdl:portType name="routerSoap">
+    <wsdl:operation name="GepirVersion2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gepir Server Swiss for client version 2</wsdl:documentation>
+      <wsdl:input message="tns:GepirVersion2SoapIn" />
+      <wsdl:output message="tns:GepirVersion2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyByGLN">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtains the Party info of a GLN</wsdl:documentation>
+      <wsdl:input message="tns:GetPartyByGLNSoapIn" />
+      <wsdl:output message="tns:GetPartyByGLNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOwnerOfGLN">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtains owner of a GLN</wsdl:documentation>
+      <wsdl:input message="tns:GetOwnerOfGLNSoapIn" />
+      <wsdl:output message="tns:GetOwnerOfGLNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyByGTIN">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtains GLN based on a GTIN</wsdl:documentation>
+      <wsdl:input message="tns:GetPartyByGTINSoapIn" />
+      <wsdl:output message="tns:GetPartyByGTINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyBySSCC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtains GLN based on a SSCC</wsdl:documentation>
+      <wsdl:input message="tns:GetPartyBySSCCSoapIn" />
+      <wsdl:output message="tns:GetPartyBySSCCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyByName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtains the Party info by name</wsdl:documentation>
+      <wsdl:input message="tns:GetPartyByNameSoapIn" />
+      <wsdl:output message="tns:GetPartyByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemByGTIN">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtains Item information based on a GTIN</wsdl:documentation>
+      <wsdl:input message="tns:GetItemByGTINSoapIn" />
+      <wsdl:output message="tns:GetItemByGTINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatistics">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Gepir Statistics</wsdl:documentation>
+      <wsdl:input message="tns:GetStatisticsSoapIn" />
+      <wsdl:output message="tns:GetStatisticsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthorization">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Gepir Authorization</wsdl:documentation>
+      <wsdl:input message="tns:GetAuthorizationSoapIn" />
+      <wsdl:output message="tns:GetAuthorizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionAuthorize">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SetAuthorize</wsdl:documentation>
+      <wsdl:input message="tns:SessionAuthorizeSoapIn" />
+      <wsdl:output message="tns:SessionAuthorizeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="routerHttpGet">
+    <wsdl:operation name="GepirVersion2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gepir Server Swiss for client version 2</wsdl:documentation>
+      <wsdl:input message="tns:GepirVersion2HttpGetIn" />
+      <wsdl:output message="tns:GepirVersion2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionAuthorize">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SetAuthorize</wsdl:documentation>
+      <wsdl:input message="tns:SessionAuthorizeHttpGetIn" />
+      <wsdl:output message="tns:SessionAuthorizeHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="routerHttpPost">
+    <wsdl:operation name="GepirVersion2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gepir Server Swiss for client version 2</wsdl:documentation>
+      <wsdl:input message="tns:GepirVersion2HttpPostIn" />
+      <wsdl:output message="tns:GepirVersion2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionAuthorize">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SetAuthorize</wsdl:documentation>
+      <wsdl:input message="tns:SessionAuthorizeHttpPostIn" />
+      <wsdl:output message="tns:SessionAuthorizeHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="routerSoap" type="tns:routerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GepirVersion2">
+      <soap:operation soapAction="http://gepir.ean.ch/GepirVersion2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyByGLN">
+      <soap:operation soapAction="http://www.gepir.org/GetPartyByGLN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPartyByGLNgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPartyByGLNgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOwnerOfGLN">
+      <soap:operation soapAction="http://www.gepir.org/GetOwnerOfGLN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOwnerOfGLNgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOwnerOfGLNgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyByGTIN">
+      <soap:operation soapAction="http://www.gepir.org/GetPartyByGTIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPartyByGTINgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPartyByGTINgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyBySSCC">
+      <soap:operation soapAction="http://www.gepir.org/GetPartyBySSCC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPartyBySSCCgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPartyBySSCCgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyByName">
+      <soap:operation soapAction="http://www.gepir.org/GetPartyByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPartyByNamegepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPartyByNamegepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemByGTIN">
+      <soap:operation soapAction="http://www.gepir.org/GetItemByGTIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetItemByGTINgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetItemByGTINgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatistics">
+      <soap:operation soapAction="http://www.gepir.org/GetStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStatisticsgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStatisticsgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthorization">
+      <soap:operation soapAction="http://www.gepir.org/GetAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAuthorizationgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAuthorizationgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionAuthorize">
+      <soap:operation soapAction="http://www.gepir.org/SessionAuthorize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="routerSoap12" type="tns:routerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GepirVersion2">
+      <soap12:operation soapAction="http://gepir.ean.ch/GepirVersion2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyByGLN">
+      <soap12:operation soapAction="http://www.gepir.org/GetPartyByGLN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPartyByGLNgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPartyByGLNgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOwnerOfGLN">
+      <soap12:operation soapAction="http://www.gepir.org/GetOwnerOfGLN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetOwnerOfGLNgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetOwnerOfGLNgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyByGTIN">
+      <soap12:operation soapAction="http://www.gepir.org/GetPartyByGTIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPartyByGTINgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPartyByGTINgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyBySSCC">
+      <soap12:operation soapAction="http://www.gepir.org/GetPartyBySSCC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPartyBySSCCgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPartyBySSCCgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyByName">
+      <soap12:operation soapAction="http://www.gepir.org/GetPartyByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPartyByNamegepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPartyByNamegepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemByGTIN">
+      <soap12:operation soapAction="http://www.gepir.org/GetItemByGTIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetItemByGTINgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetItemByGTINgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatistics">
+      <soap12:operation soapAction="http://www.gepir.org/GetStatistics" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStatisticsgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStatisticsgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthorization">
+      <soap12:operation soapAction="http://www.gepir.org/GetAuthorization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAuthorizationgepirRequestHeader" part="gepirRequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAuthorizationgepirResponseHeader" part="gepirResponseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionAuthorize">
+      <soap12:operation soapAction="http://www.gepir.org/SessionAuthorize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="routerHttpGet" type="tns:routerHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GepirVersion2">
+      <http:operation location="/GepirVersion2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionAuthorize">
+      <http:operation location="/SessionAuthorize" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="routerHttpPost" type="tns:routerHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GepirVersion2">
+      <http:operation location="/GepirVersion2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionAuthorize">
+      <http:operation location="/SessionAuthorize" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="router">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gepir Router Version 3.1.079 14.12.10</wsdl:documentation>
+    <wsdl:port name="routerSoap" binding="tns:routerSoap">
+      <soap:address location="http://gepir.gs1.org/V31/router.asmx" />
+    </wsdl:port>
+    <wsdl:port name="routerSoap12" binding="tns:routerSoap12">
+      <soap12:address location="http://gepir.gs1.org/V31/router.asmx" />
+    </wsdl:port>
+    <wsdl:port name="routerHttpGet" binding="tns:routerHttpGet">
+      <http:address location="http://gepir.gs1.org/V31/router.asmx" />
+    </wsdl:port>
+    <wsdl:port name="routerHttpPost" binding="tns:routerHttpPost">
+      <http:address location="http://gepir.gs1.org/V31/router.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

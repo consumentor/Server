@@ -1,0 +1,35 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="C2B5E59C-949E-4769-B709-5A120B661FEA/d:Models/d:Account/f:LogOnModel.cs" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:go.cmd/l:E!?Projects?Consumentor?ShopGun?trunk?go.cmd" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:ShopGun.msbuild/l:E!?Projects?Consumentor?ShopGun?trunk?ShopGun.msbuild" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:ShopGun.CCNET.IntegrationBuild.config/l:E!?Projects?Consumentor?ShopGun?trunk?ShopGun.CCNET.IntegrationBuild.config" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:ShopGun.CCNET.Install.config/l:E!?Projects?Consumentor?ShopGun?trunk?ShopGun.CCNET.Install.config" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:ShopGun.CCNET.copybeta.config/l:E!?Projects?Consumentor?ShopGun?trunk?ShopGun.CCNET.copybeta.config" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:ShopGun.CCNET.build.config/l:E!?Projects?Consumentor?ShopGun?trunk?ShopGun.CCNET.build.config" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:publishers.config/l:E!?Projects?Consumentor?ShopGun?trunk?tools?CCNET?server?publishers.config" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:Install.targets/l:E!?Projects?Consumentor?ShopGun?trunk?Install.targets" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:default_trigger.config/l:E!?Projects?Consumentor?ShopGun?trunk?tools?CCNET?server?default_trigger.config" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:Common.targets/l:E!?Projects?Consumentor?ShopGun?trunk?Common.targets" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:codecover.config/l:E!?Projects?Consumentor?ShopGun?trunk?codecover.config" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:ccnet_config.config/l:E!?Projects?Consumentor?ShopGun?trunk?tools?CCNET?server?ccnet_config.config" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:ccnet.config/l:E!?Projects?Consumentor?ShopGun?trunk?tools?CCNET?server?ccnet.config" caret="0" fromTop="0" />
+      <File id="072F7ED8-D5A2-42B7-B1E0-9FB33D84FA36/f:svn.config/l:E!?Projects?Consumentor?ShopGun?trunk?tools?CCNET?server?svn.config" caret="0" fromTop="0" />
+    </RecentFiles>
+    <RecentEdits />
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+</Configuration>

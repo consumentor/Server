@@ -1,0 +1,2 @@
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\src\MicrosoftMvcAjaxScript\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\src\MicrosoftMvcAjaxScript\obj\Debug\MicrosoftMvcAjax.dll

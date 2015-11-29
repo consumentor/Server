@@ -1,0 +1,12 @@
+//!----------------------------------------------------------
+//! Copyright (C) Microsoft Corporation. All rights reserved.
+//!----------------------------------------------------------
+//! MicrosoftMvcValidation.js
+
+#include[as-is] "%code%"
+
+// register validation
+Sys.Application.add_load(function() {
+  Sys.Application.remove_load(arguments.callee);
+  Sys.Mvc.FormContext._Application_Load();
+});

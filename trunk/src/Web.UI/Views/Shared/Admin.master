@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link href="<%=Url.Content("~/Content/css/960.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<%=Url.Content("~/Content/css/rounded.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<%=Url.Content("~/Content/css/style.css")%>" rel="stylesheet" type="text/css" />
+ <%--   <link href="<%=Url.Content("~/Content/css/reset.css") %>" rel="stylesheet" type="text/css" media="screen,projection" />
+    <link href="<%=Url.Content("~/Content/css/text.css") %>" rel="stylesheet" type="text/css" media="screen,projection" />--%>
+    <script type='text/javascript' src='<%=Url.Content("~/Content/js/jquery-1.4.4.min.js")%>'></script>
+    <script type="text/javascript" src="<%=Url.Content("~/Content/js/jquery.960grid-1.0.js") %>"></script>
+    <script type="text/javascript" src="<%=Url.Content("~/Content/js/jquery.960grid-1.0.min.js") %>"></script>
+</head>
+
+<body class="admin">
+    <div id="header" class="clear-block">
+        <div id="header-inner" class="container_12">
+            <div id="nav-header" class="grid_12">
+                <% Html.RenderPartial("LogInUserControl"); %>
+            </div>            
+            <div id="header-content" class="grid_12">
+                <div id="header-left" class="grid_4 alpha">
+                    <div id="header-left-inner" class="grid_6 alpha">
+                        <h1 id="site-name"><a href="/" title="Shopgun">Shopgun</a></h1>
+                        <%--<h2>Scanna. Förundras. Ta ett nytt beslut.</h2>--%>
+                    </div>
+                </div>
+                <div id="header-right" class="grid_7 omega">
+                    <div id="header-right-inner">
+                        <h2 class="quote">“Du kan förändra världen.<br />&nbsp; Börja i snabbköpet.”</h2>
+                    </div>
+                </div>
+            </div>            
+            <div id="nav-masthead" class="grid_12">
+                <ul>              
+                    <li><%= Html.ActionLink("Home", "Index", "Home")%></li>
+                    <li><%= Html.ActionLink("About", "About", "Home")%></li>
+                    <li><%= Html.ActionLink("Advices", "Index", "Advice")%></li>
+                    <li><%= Html.ActionLink("My organisation", "Index", "AdvisorProfile")%></li>
+
+                    <li><%= Html.ActionLink("Brands", "BrandIndex", "Brand")%></li>
+                    <li><%= Html.ActionLink("Companies", "Index", "Company")%></li>
+                    <li><%= Html.ActionLink("Products", "Index", "Product")%></li>
+                    <li><%= Html.ActionLink("Ingredients", "Index", "Ingredient")%></li>
+                    <li><%= Html.ActionLink("Concepts", "Index", "Concept")%></li>
+                    <li><%= Html.ActionLink("CategoryInfo", "Index", "CategoryInfo")%></li>
+                    <li><%= Html.ActionLink("CertificationMark", "Index", "CertificationMark")%></li>
+                    <li><%= Html.ActionLink("CertificationMark mappings", "CertificationMarkMappings", "CertificationMark")%></li>
+                    <li><%= Html.ActionLink("Roles", "Index", "Role")%></li>
+                    <li><%= Html.ActionLink("Advisors", "Index", "Advisor")%></li>
+                    <li><%= Html.ActionLink("Users", "Index", "User")%></li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="page" class="container_12 clear-block">
+        <div id="page-inner">
+            <div id="page-heading" class="grid_12"></div>
+            <div id="column-left" class="grid_12">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+        </div>
+    </div>
+    <% Html.RenderPartial("Footer"); %>   
+<%--    <script type="text/javascript">
+    /*<![CDATA[*/
+	    // onload
+	    $(function() {
+		    $("body").addGrid(12, {img_path: '../Content/images'});
+	    });
+    /*]]>*/
+    </script> --%>    
+</body>
+</html>

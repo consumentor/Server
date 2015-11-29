@@ -1,0 +1,13 @@
+Run the following 2 commands
+svn co https://78.72.136.36:8443/svn/Consumentor c:\Temp\Consumentor\ShopGun
+"c:\program files\CruiseControl.NET\server\ccnet" -config:c:\temp\Consumentor\ShopGun\trunk\tools\ccnet\server\ccnet.config
+browse to http://localhost:222/ccnet (or http://localhost/ccnet )
+force a build of "CCNET config"
+wait until "CCNET config" and all other projects are green. (If they turn Red, you have a problem to solve...)
+stop CCNET
+Open c:\program files\CruiseControl.NET\server\ccservice.exe.config
+Find <add key="ccnet.config" value="c:\some\path\to\ccnet.config"/>
+Change to <add key="ccnet.config" value="C:\CCNetWorkSpace\Consumentor\ShopGun\CCNET config\CCNET\server\ccnet.config"/>
+Save
+net start "Cruisecontrol.NET server"
+Goto ccnet website and force build of "ccnet config". When all projects are built all should be green.

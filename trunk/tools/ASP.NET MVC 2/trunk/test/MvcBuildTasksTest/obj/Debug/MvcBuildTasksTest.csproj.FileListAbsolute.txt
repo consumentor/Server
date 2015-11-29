@@ -1,0 +1,10 @@
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcBuildTasksTest\bin\Debug\Microsoft.Web.Mvc.Build.Test.dll
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcBuildTasksTest\bin\Debug\Microsoft.Web.Mvc.Build.Test.pdb
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcBuildTasksTest\bin\Debug\Microsoft.Web.Mvc.Build.dll
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcBuildTasksTest\bin\Debug\Moq.dll
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcBuildTasksTest\bin\Debug\Microsoft.Web.Mvc.Build.pdb
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcBuildTasksTest\bin\Debug\Moq.pdb
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcBuildTasksTest\bin\Debug\Moq.xml
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcBuildTasksTest\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcBuildTasksTest\obj\Debug\Microsoft.Web.Mvc.Build.Test.dll
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcBuildTasksTest\obj\Debug\Microsoft.Web.Mvc.Build.Test.pdb

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Consumentor.ShopGun.Domain.AdministratorRole" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AdministratorRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Consumentor.ShopGun.Domain.Base" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Consumentor.ShopGun.Domain.Brand">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAADAAAYAAAACAACAAgEAAAAAQBBAAAAAAAAAAAA=</HashCode>
+      <FileName>Brand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Consumentor.ShopGun.Domain.EndConsumerRole" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EndConsumerRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Consumentor.ShopGun.Domain.Mentor">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Mentor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Consumentor.ShopGun.Domain.Product">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACEAAAEAwgIAAACEGYCCEIAAAEQEAAAAAggAAZACQ=</HashCode>
+      <FileName>Product.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Consumentor.ShopGun.Domain.Semaphore">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiAAAAAAA=</HashCode>
+      <FileName>Semaphore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Consumentor.ShopGun.Domain.Role" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Consumentor.ShopGun.Domain.User" Collapsed="true">
+    <Position X="1" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAECEEAAACgIACAAEEDAAgAaAAgEABACAQAAAAAIAAg=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <Destination Include="D1">
+      <AppName>P2Simulator</AppName>
+      <TestServer>ICiC-Server</TestServer>
+      <DatabaseServer>.</DatabaseServer>
+      <Parameters>/CreateDatabase /CreateServiceUser</Parameters>
+    </Destination>
+    <Destination Include="D2">
+      <AppName>Server</AppName>
+      <TestServer>ICiC-Server</TestServer>
+      <DatabaseServer>.</DatabaseServer>
+      <Parameters>/CreateDatabase /CreateServiceUser</Parameters>
+    </Destination>
+    <Destination Include="D3">
+      <AppName>P2Simulator.Web</AppName>
+      <TestServer>ICiC-Server</TestServer>
+      <DatabaseServer>.</DatabaseServer>
+      <Parameters>/CreateServiceUser</Parameters>
+    </Destination>    
+    
+    <Destination Include="D4">
+      <AppName>PrintingPress</AppName>
+      <TestServer>ICiC-PrintingPr</TestServer>
+      <DatabaseServer>.\SqlExpress</DatabaseServer>
+      <Parameters>/CreateDatabase /CreateServiceUser</Parameters>
+    </Destination>
+        
+    <Destination Include="D5">
+      <AppName>PlcSocket</AppName>
+      <TestServer>ICiC-PrintingPr</TestServer>
+      <DatabaseServer>.\SqlExpress</DatabaseServer>
+      <Parameters>/ServiceUser:DMS.PrintingPress /ServicePassword:qEtUo_12358 /PlcMode:MCW /MagneticCodeTypeLength:52</Parameters>
+    </Destination>
+    
+    <Destination Include="D6">
+      <AppName>Laminator</AppName>
+      <TestServer>ICiC-Laminator</TestServer>
+      <DatabaseServer>.\SqlExpress</DatabaseServer>
+      <Parameters>/CreateDatabase /CreateServiceUser</Parameters>
+    </Destination>
+    <Destination Include="D7">
+      <AppName>PlcSocket</AppName>
+      <TestServer>ICiC-Laminator</TestServer>
+      <DatabaseServer>.\SqlExpress</DatabaseServer>
+      <Parameters>/ServiceUser:DMS.Laminator /ServicePassword:qEtUo_12358</Parameters>
+    </Destination>
+    
+    <Destination Include="D8">
+      <AppName>Slitter</AppName>
+      <TestServer>ICiC-Slitter</TestServer>
+      <DatabaseServer>.\SqlExpress</DatabaseServer>
+      <Parameters>/CreateDatabase /CreateServiceUser</Parameters>
+    </Destination>
+    <Destination Include="D9">
+      <AppName>PlcSocket</AppName>
+      <TestServer>ICiC-Slitter</TestServer>
+      <DatabaseServer>.\SqlExpress</DatabaseServer>
+      <Parameters>/ServiceUser:DMS.Slitter /ServicePassword:qEtUo_12358</Parameters>
+    </Destination>
+    
+    <Destination Include="D10">
+      <AppName>Doctoring</AppName>
+      <TestServer>ICiC-Doctoring</TestServer>
+      <DatabaseServer>.\SqlExpress</DatabaseServer>
+      <Parameters>/CreateDatabase /CreateServiceUser</Parameters>
+    </Destination>
+    <Destination Include="D11">
+      <AppName>PlcSocket</AppName>
+      <TestServer>ICiC-Doctoring</TestServer>
+      <DatabaseServer>.\SqlExpress</DatabaseServer>
+      <Parameters>/ServiceUser:DMS.Doctoring /ServicePassword:qEtUo_12358</Parameters>
+    </Destination>
+    
+    <Destination Include="D12">
+      <AppName>Client.Laminator</AppName>
+      <TestServer>ICiC-Laminator</TestServer>
+      <DatabaseServer>.\SqlExpress</DatabaseServer>
+      <Parameters>/CreateServiceUser</Parameters>
+    </Destination>
+  </ItemGroup>
+  
+  <Target Name ="Install" Outputs="%(Destination.Identity)" DependsOnTargets="CopyInstall;UnInstall" >
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target Install for %(Destination.AppName)" />
+    <PropertyGroup>
+      <InstallPath>I:\%(Destination.AppName)</InstallPath>
+      <ExeName>TetraPak.ICiC.DMS.%(Destination.AppName).v$(Version).exe</ExeName>
+    </PropertyGroup>
+    <Message Text="AppServer: %(Destination.AppName)" />
+    <Exec Command="net use * /delete /Y" ContinueOnError="true" Condition="%(Destination.TestServer) != ''" />
+    <Exec Command="net use I: \\%(Destination.TestServer)\Install$ /persistent:no /user:$(InstallUser) $(InstallPwd)" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode"/>
+    </Exec>
+
+    <WriteLinesToFile File="I:\%(Destination.AppName)\Install.cmd" Lines="C:\Install\%(Destination.AppName)\ToInstall\$(ExeName) /S %(Destination.Parameters) /DatabaseServer:%(Destination.DatabaseServer) /DmsServer:$(DmsServer)" Overwrite="true" Condition="$(ErrorCode)==0" />
+    <WriteLinesToFile File="psexecInstall.cmd" Lines="tools\pstools\psexec.exe \\%(Destination.TestServer) -u $(InstallUser) -p $(InstallPwd) -accepteula -i C:\Install\%(Destination.AppName)\Install.cmd" Overwrite="true" />
+    <Exec Command="psexecInstall.cmd" Condition="$(ErrorCode)==0" />
+    <Copy SourceFiles="$(InstallPath)\ToInstall\$(ExeName)" DestinationFolder="$(InstallPath)\Installed\" Condition="$(ErrorCode)==0" />
+    <Delete Files="$(InstallPath)\ToInstall\$(ExeName)" Condition="$(ErrorCode)==0" />
+  </Target>
+
+  <Target Name="UnInstall" Outputs="%(Destination.Identity)" >
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target UnInstall for %(Destination.AppName)" />
+    <Message Text="AppServer: %(Destination.AppName)" />
+
+    <Exec Command="net use * /delete /Y" ContinueOnError="true" Condition="%(Destination.TestServer) != ''" />
+    <Exec Command="net use I: \\%(Destination.TestServer)\Install$ /persistent:no /user:$(InstallUser) $(InstallPwd)" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode"/>
+    </Exec>
+    <ItemGroup>
+      <InstallerFiles Include="I:\%(Destination.AppName)\Installed\*.exe" />
+    </ItemGroup>
+    <Message Text="Files: @(InstallerFiles)" />
+
+    <RegexReplace Input="@(InstallerFiles)" Replacement="" Expression="(I:\\%(Destination.AppName)\\Installed\\TetraPak.ICiC.DMS.%(Destination.AppName).)|(.exe)">
+      <Output ItemName ="InstalledVersion" TaskParameter="Output" />
+    </RegexReplace>
+    <PropertyGroup>
+      <InstalledVersion>@(InstalledVersion)</InstalledVersion>
+    </PropertyGroup>
+    <Message Text="Files: $(InstalledVersion)" />
+    <WriteLinesToFile File="I:\%(Destination.AppName)\uninstall.cmd"
+                      Lines='"C:\Program Files\TetraPak\DMS.%(Destination.AppName)\$(InstalledVersion)\uninstall.exe" /S'
+                      Overwrite="true"
+                      Condition="($(ErrorCode)==0) And $(InstalledVersion) != ''" />
+
+    <WriteLinesToFile File="psexec.cmd"
+                      Lines="tools\pstools\psexec.exe \\%(Destination.TestServer) -u $(InstallUser) -p $(InstallPwd) -accepteula -i C:\Install\%(Destination.AppName)\uninstall.cmd"
+                      Overwrite="true"
+                      Condition="($(ErrorCode)==0) And $(InstalledVersion) != ''" />
+    <Exec Command="psexec.cmd"
+          ContinueOnError="true"
+          Condition="@(InstalledVersion)!=''" />
+    <Copy SourceFiles="@(InstallerFiles)"
+          DestinationFolder="I:\%(Destination.AppName)\UnInstalled\"
+          Condition="($(ErrorCode)==0) And ($(InstalledVersion)!='')" />
+    <Delete Files="@(InstallerFiles)"
+            Condition="($(ErrorCode)==0) And ($(InstalledVersion)!='')" />
+    <!-- Allow the uninstaller to run -->
+    <!--<Sleep Seconds="20" Condition="($(ErrorCode)==0) And (@(InstalledVersion)!='')" />-->
+  </Target>
+
+  <Target Name="CopyInstall" Outputs="%(Destination.Identity)" DependsOnTargets="BuildInstaller" >
+    <!-- Condition="'$(CCNetLabel)' != ''"> -->
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target CopyInstall for %(Destination.AppName)" />
+    <ItemGroup>
+      <PowerShellScripts Include="src\Installer\Powershell_scripts\*.*" />
+    </ItemGroup>
+    <Message Text="AppServer: %(Destination.AppName)" />
+
+    <Exec Command="net use * /delete /Y" ContinueOnError="true" Condition="%(Destination.TestServer) != ''" />
+    <Message Text="net use I: \\%(Destination.TestServer)\Install$ /persistent:no /user:$(InstallUser) $(InstallPwd)" />
+    <Exec Command="net use I: \\%(Destination.TestServer)\Install$ /persistent:no /user:$(InstallUser) $(InstallPwd)" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode"/>
+    </Exec>
+    <MakeDir Directories="I:\%(Destination.AppName)" Condition="$(ErrorCode)==0 And (!(Exists('I:\%(Destination.AppName')))" />
+    <MakeDir Directories="I:\%(Destination.AppName)\ToInstall" Condition="$(ErrorCode)==0 And (!(Exists('I:\%(Destination.AppName)\ToInstall')))" />
+    <MakeDir Directories="I:\%(Destination.AppName)\Installed" Condition="$(ErrorCode)==0 And (!(Exists('I:\%(Destination.AppName)\Installed')))" />
+    <MakeDir Directories="I:\%(Destination.AppName)\UnInstalled" Condition="$(ErrorCode)==0 And (!(Exists('I:\%(Destination.AppName)\UnInstalled')))" />
+    <Exec Command="del /Q I:\%(Destination.AppName)\ToInstall\*.exe" Condition="$(ErrorCode)==0" />
+    <Copy SourceFiles="@(PowerShellScripts)" DestinationFolder="I:\%(Destination.AppName)" SkipUnchangedFiles="true" Condition="$(ErrorCode)==0" />
+    <Copy SourceFiles="$(BuildDirectory)\Installers\TetraPak.ICiC.DMS.%(Destination.AppName).v$(Version).exe" DestinationFiles="I:\%(Destination.AppName)\ToInstall\TetraPak.ICiC.DMS.%(Destination.AppName).v$(Version).exe" Condition="$(ErrorCode)==0" />
+    <WriteLinesToFile File="I:\%(Destination.AppName)\DatabaseServer.txt" Lines="%(Destination.DatabaseServer)" Condition="$(ErrorCode)==0 And %(Destination.DatabaseServer)!=''" />
+  </Target>
+
+  <Target Name="BuildInstaller" DependsOnTargets="ServerInstaller;ClientInstaller">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target GetSpecAndTestFiles" />
+  </Target>
+
+  <Target Name="ClientInstaller" DependsOnTargets="DeleteOldInstallers;Test">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target ClientInstaller" />
+    <MakeDir
+      Directories="$(BuildDirectory)\Installers" />
+    <!-- P2Simulator web -->
+    <exec
+      WorkingDirectory="."
+      Command="tools\nsis\makensis.exe /DVERSION=$(Version) src\Installer\P2Simulator.Web.Installer.nsi"
+		  />
+    <!-- Laminator -->
+    <exec
+      WorkingDirectory="."
+      Command="tools\nsis\makensis.exe /DVERSION=$(Version) /DAPPNAME=DMS.Client.Laminator /DFILESPATH=..\UI\WindowsUI.Laminator\bin\debug src\Installer\DMS.Client.Installer.nsi"
+		  />
+  </Target>
+
+  <Target Name="ServerInstaller" DependsOnTargets="DeleteOldInstallers;Test">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target ServerInstaller" />
+    <MakeDir Directories="$(BuildDirectory)\Installers"/>
+    <!-- Server -->
+    <exec
+      WorkingDirectory="."
+      Command="tools\nsis\makensis.exe /DVERSION=$(Version) /DAPPNAME=DMS.Server /DFILESPATH=..\ApplicationService.Server\bin\debug src\Installer\DMS.Installer.nsi "
+	  />
+    <!-- PrintingPress -->
+    <exec
+      WorkingDirectory="."
+      Command="tools\nsis\makensis.exe /DVERSION=$(Version) /DAPPNAME=DMS.PrintingPress /DFILESPATH=..\ApplicationService.PrintingPress\bin\debug src\Installer\DMS.Installer.nsi"
+	  />
+    <!-- Laminator -->
+    <exec
+      WorkingDirectory="."
+      Command="tools\nsis\makensis.exe /DVERSION=$(Version) /DAPPNAME=DMS.Laminator /DFILESPATH=..\ApplicationService.Laminator\bin\debug src\Installer\DMS.Installer.nsi"
+	  />
+    <!-- Slitter -->
+    <exec
+      WorkingDirectory="."
+      Command="tools\nsis\makensis.exe /DVERSION=$(Version) /DAPPNAME=DMS.Slitter /DFILESPATH=..\ApplicationService.Slitter\bin\debug src\Installer\DMS.Installer.nsi"
+	  />
+    <!-- Doctoring -->
+    <exec
+      WorkingDirectory="."
+      Command="tools\nsis\makensis.exe /DVERSION=$(Version) /DAPPNAME=DMS.Doctoring /DFILESPATH=..\ApplicationService.Doctoring\bin\debug src\Installer\DMS.Installer.nsi"
+	  />
+
+    <!-- PlcSocket -->
+    <exec
+      WorkingDirectory="."
+      Command="tools\nsis\makensis.exe /DVERSION=$(Version) /DAPPNAME=DMS.PlcSocket /DFILESPATH=..\PlcSocket\bin\debug src\Installer\DMS.Installer.nsi"
+	  />
+    
+    <!-- P2Simulator -->
+    <exec
+      WorkingDirectory="."
+      Command="tools\nsis\makensis.exe /DVERSION=$(Version) /DAPPNAME=DMS.P2Simulator /DFILESPATH=..\P2Simulator\bin\debug src\Installer\DMS.Installer.nsi"
+	  />
+  </Target>
+
+  <Target Name="DeleteOldInstallers" DependsOnTargets="Version">
+    <ItemGroup>
+      <OldInstallerFiles Include="$(BuildDirectory)\Installers\*.exe" />
+    </ItemGroup>
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target DeleteOldInstallers" />
+    <Delete Files="@(OldInstallerFiles)" />
+  </Target>
+</Project>

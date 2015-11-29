@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{776549B3-F2FD-4377-9635-34BD8A7A6AC1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Consumentor.ShopGun.Gateway</RootNamespace>
+    <AssemblyName>Consumentor.ShopGun.Gateway</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Configuration\IOPVWebServiceConfiguration.cs" />
+    <Compile Include="Configuration\OPVWebServiceConfiguration.cs" />
+    <Compile Include="GatewayUrlConfigurator.cs" />
+    <Compile Include="IListMapper.cs" />
+    <Compile Include="IMapper.cs" />
+    <Compile Include="IWebServiceSettings.cs" />
+    <Compile Include="ListMapper.cs" />
+    <Compile Include="Opv\AllergyInfo.cs" />
+    <Compile Include="Opv\AuthHeader.cs" />
+    <Compile Include="Opv\ContainsAllergenic.cs" />
+    <Compile Include="Opv\GetAllAvailableEANsCompletedEventArgs.cs" />
+    <Compile Include="Opv\GetAllAvailableEANsCompletedEventHandler.cs" />
+    <Compile Include="Opv\GetChangedProductsEANsCompletedEventArgs.cs" />
+    <Compile Include="Opv\GetChangedProductsEANsCompletedEventHandler.cs" />
+    <Compile Include="Opv\GetProductDataCompletedEventArgs.cs" />
+    <Compile Include="Opv\GetProductDataCompletedEventHandler.cs" />
+    <Compile Include="Opv\GetProductListDataCompletedEventArgs.cs" />
+    <Compile Include="Opv\GetProductListDataCompletedEventHandler.cs" />
+    <Compile Include="Opv\IProductSearchWebServiceGateway.cs" />
+    <Compile Include="Opv\ListProduct.cs" />
+    <Compile Include="Opv\MarkInfo.cs" />
+    <Compile Include="Opv\Product.cs" />
+    <Compile Include="Opv\ProductSearchWebServiceGateway.cs" />
+    <Compile Include="Opv\TestAuthorizationCompletedEventArgs.cs" />
+    <Compile Include="Opv\TestAuthorizationCompletedEventHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Server\Brand.cs" />
+    <Compile Include="Server\IProductSearchWebServiceGateway.cs" />
+    <Compile Include="Server\ShopgunMembershipWebserviceGateway.cs" />
+    <Compile Include="Server\Product.cs" />
+    <Compile Include="Server\ProductSearchWebServiceGateway.cs" />
+    <Compile Include="Server\SearchCompletedEventArgs.cs" />
+    <Compile Include="Server\SearchCompletedEventHandler.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Web References\org.gs1.gepir\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\se.gs1.gepir\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\se.mediabanken.www\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WebServiceBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CreateAll.vbs">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="FixGatewayClassNaming.vbs" />
+    <Content Include="FixGatewayInheritance.vbs" />
+    <Content Include="FixGatewayNaming.vbs" />
+    <Content Include="FixGatewayUrl.vbs" />
+    <None Include="Web References\org.gs1.gepir\router.disco" />
+    <None Include="Web References\se.gs1.gepir\router.disco" />
+    <None Include="Web References\se.mediabanken.www\ProductService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Gepir\CreateGateways.cmd" />
+    <None Include="Opv\CreateGateways.cmd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Server\CreateGateways.cmd" />
+    <None Include="Web References\org.gs1.gepir\gepirAuthorization.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.gs1.gepir\gepirItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.gs1.gepir\gepirParty.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.gs1.gepir\gepirStatistics.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\org.gs1.gepir\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\org.gs1.gepir\router.wsdl" />
+    <None Include="Web References\se.gs1.gepir\gepirItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\se.gs1.gepir\gepirParty.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\se.gs1.gepir\gepirStatistics.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\se.gs1.gepir\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\se.gs1.gepir\router.wsdl" />
+    <None Include="Web References\se.mediabanken.www\ListProduct.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\se.mediabanken.www\Product.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\se.mediabanken.www\ProductService.wsdl" />
+    <None Include="Web References\se.mediabanken.www\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{CF17F623-A491-426C-A708-6E5A64446B62}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{A84D935A-05D0-43EE-A318-F9F5A62B9E1D}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://gepir.gs1.org/V31/router.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\org.gs1.gepir\</RelPath>
+      <UpdateFromURL>http://gepir.gs1.org/V31/router.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Consumentor_ShopGun_Gateway_org_gs1_gepir_router</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://gepir.gs1.se/router/router.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\se.gs1.gepir\</RelPath>
+      <UpdateFromURL>http://gepir.gs1.se/router/router.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Consumentor_ShopGun_Gateway_se_gs1_gepir_router</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.mediabanken.se/WS/Consumentor/ProductService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\se.mediabanken.www\</RelPath>
+      <UpdateFromURL>http://www.mediabanken.se/WS/Consumentor/ProductService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Consumentor_ShopGun_Gateway_se_mediabanken_www_ProductService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

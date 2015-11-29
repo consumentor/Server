@@ -1,0 +1,1 @@
+If you dont want new versions automaticall installed, create a file named DontInstall.txt

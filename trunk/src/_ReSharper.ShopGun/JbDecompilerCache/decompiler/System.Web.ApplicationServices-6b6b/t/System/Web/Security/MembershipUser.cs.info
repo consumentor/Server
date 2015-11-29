@@ -1,0 +1,8 @@
+﻿Code version: 6.1.37.86
+Assembly name System.Web.ApplicationServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 mvid {98f81ab1-1f69-4907-b75b-d2b87a5a6a54}
+* ref mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {3a762d41-b8a2-4532-9374-e59c7d32b5e9}
+* ref System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {fe7c73c7-239e-4a94-a2c9-a55b6653c6a6}
+* ref System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {53f1a9c0-def8-4cc4-b0b9-1590b274ede8}

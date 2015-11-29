@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{D183A3D8-5FD8-494B-B014-37F57B35E655}") = "ImportMentorPurchaseAdvices", "ImportMentorPurchaseAdvices.dtproj", "{CCBBFAA0-C677-46F3-91CC-6E8E42A17285}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCBBFAA0-C677-46F3-91CC-6E8E42A17285}.Development|Default.ActiveCfg = Development
+		{CCBBFAA0-C677-46F3-91CC-6E8E42A17285}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

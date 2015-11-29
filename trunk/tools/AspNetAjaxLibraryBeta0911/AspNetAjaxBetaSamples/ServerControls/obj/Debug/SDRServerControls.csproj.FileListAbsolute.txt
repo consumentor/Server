@@ -1,0 +1,7 @@
+C:\LocalDocs\VS2008 Projects\SDRServerControls\SDRServerControls\obj\Debug\ResolveAssemblyReference.cache
+C:\LocalDocs\VS2008 Projects\SDRServerControls\SDRServerControls\obj\Debug\SDRServerControls.ClientControls.resources
+C:\LocalDocs\VS2008 Projects\SDRServerControls\SDRServerControls\obj\Debug\SDRServerControls.csproj.GenerateResource.Cache
+C:\LocalDocs\VS2008 Projects\SDRServerControls\SDRServerControls\bin\Debug\SDRServerControls.dll
+C:\LocalDocs\VS2008 Projects\SDRServerControls\SDRServerControls\bin\Debug\SDRServerControls.pdb
+C:\LocalDocs\VS2008 Projects\SDRServerControls\SDRServerControls\obj\Debug\SDRServerControls.dll
+C:\LocalDocs\VS2008 Projects\SDRServerControls\SDRServerControls\obj\Debug\SDRServerControls.pdb

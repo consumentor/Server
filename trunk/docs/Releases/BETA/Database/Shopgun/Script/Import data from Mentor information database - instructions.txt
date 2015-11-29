@@ -1,0 +1,27 @@
+Run the SQL-Scripts below in following order:
+
+1. ImportCountryCodes.sql
+
+2. ImportCountriesWithLatLong.sql
+
+3. ImportCompanies.sql
+
+4. ImportBrands - MentorInfoDB.sql
+
+5. ImportMentor - MentorInfoDB.sql
+
+6. ImportProducts.sql || ImportProducts - MentorInfoDB.sql
+
+7. ImportSemaphore.sql (INSERT) 
+
+8. ImportProductAdvise - MentorInfoDB.sql
+
+9. ImportIngredients.sql || ImportIngredients - MentorInfoDB.sql
+
+10. ImportIngredientAdvise.sql || ImportIngredientAdvise - MentorInfoDB.sql
+
+11.ImportCompanies - MentorInfoDB.sql
+
+12.ImportCompanyAdvise - MentorInfoDB.sql
+
+13. ImportSemaphore.sql (UPDATE)

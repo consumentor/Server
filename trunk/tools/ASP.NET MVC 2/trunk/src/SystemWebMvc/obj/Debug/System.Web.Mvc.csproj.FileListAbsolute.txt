@@ -1,0 +1,7 @@
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\bin\Debug\System.Web.Mvc.dll
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\bin\Debug\System.Web.Mvc.pdb
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\src\SystemWebMvc\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\src\SystemWebMvc\obj\Debug\System.Web.Mvc.Resources.MvcResources.resources
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\src\SystemWebMvc\obj\Debug\System.Web.Mvc.csproj.GenerateResource.Cache
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\src\SystemWebMvc\obj\Debug\System.Web.Mvc.dll
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\src\SystemWebMvc\obj\Debug\System.Web.Mvc.pdb

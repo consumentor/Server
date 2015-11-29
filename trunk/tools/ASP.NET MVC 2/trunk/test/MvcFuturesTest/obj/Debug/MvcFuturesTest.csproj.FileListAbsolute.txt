@@ -1,0 +1,14 @@
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\bin\Debug\MvcFuturesTest.dll
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\bin\Debug\MvcFuturesTest.pdb
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\bin\Debug\Microsoft.Web.Mvc.dll
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\bin\Debug\Microsoft.Web.UnitTestUtil.dll
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\bin\Debug\Moq.dll
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\bin\Debug\System.Web.Mvc.dll
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\bin\Debug\Microsoft.Web.UnitTestUtil.pdb
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\bin\Debug\System.Web.Mvc.pdb
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\bin\Debug\Moq.pdb
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\bin\Debug\Moq.xml
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\bin\Debug\Microsoft.Web.Mvc.pdb
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\obj\Debug\MvcFuturesTest.dll
+E:\Projects\Consumentor\ShopGun\trunk\tools\ASP.NET MVC 2\trunk\test\MvcFuturesTest\obj\Debug\MvcFuturesTest.pdb

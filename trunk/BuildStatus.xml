@@ -1,0 +1,30 @@
+<data>
+  <Item Time="2014-12-01 10:20:08" Data="Target Clean" />
+  <Item Time="2014-12-01 10:20:09" Data="Target Compile" />
+  <Item Time="2014-12-01 10:20:14" Data="Target Build" />
+  <Item Time="2014-12-01 10:22:02" Data="Target UnInstall for Shopgun.Server" />
+  <Item Time="2014-12-01 10:23:02" Data="Target DeleteOldInstallers" />
+  <Item Time="2014-12-01 10:23:02" Data="Target ServerInstaller" />
+  <Item Time="2014-12-01 10:23:03" Data="Target BuildInstaller" />
+  <Item Time="2014-12-01 10:23:03" Data="Target CopyInstall for Shopgun.Server" />
+  <Item Time="2014-12-01 10:23:25" Data="Target Install for Shopgun.Server" />
+  <Item Time="2014-12-01 10:38:05" Data="Target UnInstall for Shopgun.Server" />
+  <Item Time="2014-12-01 10:38:53" Data="Target DeleteOldInstallers" />
+  <Item Time="2014-12-01 10:38:53" Data="Target ServerInstaller" />
+  <Item Time="2014-12-01 10:38:54" Data="Target BuildInstaller" />
+  <Item Time="2014-12-01 10:38:54" Data="Target CopyInstall for Shopgun.Server" />
+  <Item Time="2014-12-01 10:39:15" Data="Target Install for Shopgun.Server" />
+  <Item Time="2014-12-01 10:42:46" Data="Target UnInstall for Shopgun.Server" />
+  <Item Time="2014-12-01 10:43:39" Data="Target UnInstall for Shopgun.Server" />
+  <Item Time="2014-12-01 10:44:00" Data="Target DeleteOldInstallers" />
+  <Item Time="2014-12-01 10:44:00" Data="Target ServerInstaller" />
+  <Item Time="2014-12-01 10:44:02" Data="Target BuildInstaller" />
+  <Item Time="2014-12-01 10:44:02" Data="Target CopyInstall for Shopgun.Server" />
+  <Item Time="2014-12-01 10:45:01" Data="Target Install for Shopgun.Server" />
+  <Item Time="2014-12-01 10:59:03" Data="Target UnInstall for Shopgun.Server" />
+  <Item Time="2014-12-01 10:59:51" Data="Target DeleteOldInstallers" />
+  <Item Time="2014-12-01 10:59:51" Data="Target ServerInstaller" />
+  <Item Time="2014-12-01 10:59:52" Data="Target BuildInstaller" />
+  <Item Time="2014-12-01 10:59:52" Data="Target CopyInstall for Shopgun.Server" />
+  <Item Time="2014-12-01 11:00:13" Data="Target Install for Shopgun.Server" />
+</data>

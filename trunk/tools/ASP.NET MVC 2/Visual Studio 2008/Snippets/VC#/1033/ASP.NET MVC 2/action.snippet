@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Action</Title>
+      <Shortcut>action</Shortcut>
+      <Description>Code snippet for an action.</Description>
+      <Author>Microsoft Corporation</Author>
+	  <SnippetTypes>
+		<SnippetType>Expansion</SnippetType>
+	  </SnippetTypes>
+      <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349C5851-65DF-11DA-9384-00065B846F21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>System.Web.Mvc</Namespace>
+        </Import>
+      </Imports>
+      <References>
+        <Reference>
+          <Assembly>System.Web.Mvc.dll</Assembly>
+        </Reference>
+      </References>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>Replace with the name of the action</ToolTip>
+          <Default>Action</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[public ActionResult $name$()
+      {
+          return View();$end$
+      }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

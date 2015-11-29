@@ -1,0 +1,49 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{256C18D8-0A46-4DEC-A9D6-D8073D15F453}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>MicrosoftMvcAjax</AssemblyName>
+    <NoStdLib>True</NoStdLib>
+    <CopyReferences>True</CopyReferences>
+    <TemplateFile>Properties\Script.jst</TemplateFile>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0028, 1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <DocumentationFile>bin\Release\MvcAjaxScript.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="..\..\tools\ScriptSharp\Atlas\aacorlib.dll" />
+    <Reference Include="..\..\tools\ScriptSharp\Atlas\MicrosoftAjax.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Script.jst" />
+    <Compile Include="AjaxContext.cs" />
+    <Compile Include="AjaxEventHandler.cs" />
+    <Compile Include="AjaxOptions.cs" />
+    <Compile Include="AsyncHyperlink.cs" />
+    <Compile Include="CancellableAjaxEventHandler.cs" />
+    <Compile Include="InsertionMode.cs" />
+    <Compile Include="MvcHelpers.cs" />
+    <Compile Include="AsyncForm.cs" />
+  </ItemGroup>
+  <Import Project="..\..\tools\ScriptSharp\nStuff.ScriptSharp.targets" />
+</Project>

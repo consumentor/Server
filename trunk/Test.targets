@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Target Name="IntegrationTestOnly" DependsOnTargets="GetSpecAndTestFiles">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target IntegrationTestOnly" />
+    <NUnit ToolPath="tools\nunit\"
+           OutputXmlFile="$(CCNetArtifactDirectory)\test-results.xml"
+           IncludeCategory="$(IntegrationTestCategory)"
+           Assemblies="@(SpecAndTestFiles)"
+           DisableShadowCopy="true" />
+  </Target>
+
+  <!--<Target Name="LongRunningIntegrationTest" DependsOnTargets="Compile;LongRunningIntegrationTestOnly">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target LongRunningIntegrationTest" />
+  </Target>-->
+
+  <Target Name="GetSpecAndTestFiles">
+    <ItemGroup>
+      <SpecAndTestFiles Include="src\Spec_and_Test\**\*Spec.dll" Exclude="**\obj\**\*.*"/>
+      <SpecAndTestFiles Include="src\Spec_and_Test\**\*Tests.dll" Exclude="**\obj\**\*.*"/>
+      <SpecAndTestFiles Include="src\Spec_and_Test\**\*Test.dll" Exclude="**\obj\**\*.*"/>
+      <SpecAndTestFiles Include="src\Spec_and_Test\**\*Test.exe" Exclude="**\obj\**\*.*"/>
+      <!--<SpecAndTestFiles Include="src\Spec_and_Test\**\Simulator.exe" Exclude="**\obj\**\*.*"/>-->
+    </ItemGroup>
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target GetSpecAndTestFiles" />
+  </Target>
+
+  <Target Name="SpecOnly" DependsOnTargets="GetSpecAndTestFiles">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target SpecOnly" />
+    <NUnit ToolPath="tools\nunit\"
+           OutputXmlFile="$(CCNetArtifactDirectory)\test-results.xml"
+           ExcludeCategory="$(IntegrationTestCategory)"
+           Assemblies="@(SpecAndTestFiles)"
+           DisableShadowCopy="true" />
+  </Target>
+
+  <Target Name="SpecAndTestOnly" DependsOnTargets="GetSpecAndTestFiles">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target SpecAndTestOnly" />
+    <NUnit ToolPath="tools\nunit\"
+           OutputXmlFile="$(CCNetArtifactDirectory)\integration-results.xml"
+           Assemblies="@(SpecAndTestFiles)"
+           DisableShadowCopy="true" />
+  </Target>
+
+  <!--<Target Name="LongRunningIntegrationTestOnly" DependsOnTargets="GetSpecAndTestFiles">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target LongRunningIntegrationtestOnly" />
+    <NUnit ToolPath="tools\nunit\"
+           OutputXmlFile="$(CCNetArtifactDirectory)\LongRunningIntegrationtest-results.xml"
+           IncludeCategory="$(LongRunningTestCategory)"
+           Assemblies="@(SpecAndTestFiles)"
+           DisableShadowCopy="true" />
+  </Target>-->
+
+</Project>

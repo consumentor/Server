@@ -1,0 +1,46 @@
+﻿Code version: 6.1.37.86
+Assembly name System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a mvid {9cc715b3-001d-4363-8179-45f77caf80f4}
+* ref mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {3a762d41-b8a2-4532-9374-e59c7d32b5e9}
+* ref System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {53f1a9c0-def8-4cc4-b0b9-1590b274ede8}
+* ref System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {fe7c73c7-239e-4a94-a2c9-a55b6653c6a6}
+* ref Microsoft.Build.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {b916fc91-a1c6-4d46-8a92-a8e5bfc9061c}
+* ref System.ComponentModel.DataAnnotations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+  mvid {9bf4abd8-cff3-4a1a-b3c8-31f05f619b99}
+* ref System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {92e20897-1941-4aa2-a68e-7acc8bba4dba}
+* ref System.Runtime.Caching, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {ef1c5528-4b96-4891-b5ed-3a0d92b7be87}
+* ref System.Web.ApplicationServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+  mvid {98f81ab1-1f69-4907-b75b-d2b87a5a6a54}
+* ref System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {cb3dd89c-c9a9-4fc3-bd7a-a1af214ee62d}
+* ref System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {70bc5017-f6d4-4d62-bb3b-17598e506217}
+* ref System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {82b9d938-d61e-4e8a-a44f-980b9b990f15}
+* ref System.Web.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {5edcf2e4-de6e-4330-9c12-fed50bfabb96}
+* ref Microsoft.Build.Utilities.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {2e0b3909-77fb-4ae6-9229-c566a34dfa98}
+* ref System.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {1e147676-eb0d-4be5-8b46-bef44a26ffac}
+* ref System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {d16be579-119f-44b4-bd46-3b55f5943ae0}
+* ref System.DirectoryServices.Protocols, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {d62b3160-62e7-43ec-b8a7-a2a7757fb40a}
+* ref System.EnterpriseServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {d7112dd7-2e4f-45df-bb18-8521c31b5894}
+* ref System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {7172a5cf-91b5-42f2-bb9b-c1f1fd52f4d2}
+* ref Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {c6a43f93-d7b0-432a-88e6-77234fc4287f}
+* ref System.ServiceProcess, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {52db086a-bd04-4156-b34e-56b5a391d5dd}
+* ref System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {a255ed9b-0566-492d-9677-f1491d76a31c}
+* ref System.Web.RegularExpressions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {d0aa8e90-9061-4112-af23-3237e723b999}

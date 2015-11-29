@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Target Name="Compile" DependsOnTargets="Version;Clean">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target Compile" />
+    <MSBuild Projects="Src\ShopGun.sln"
+				Properties="Configuration=Debug;PrivateBuild=false" />
+  </Target>
+
+  <Target Name="Clean">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="true" Item="Target Clean" />
+    <RemoveDir Directories="Src\Domain\bin;Src\Domain\obj;Src\Infrastructure\bin;Src\Infrastructure\obj;$(BuildDirectory)\Output" />
+
+    <Delete Files="$(CCNetArtifactDirectory)\test-results.xml;$(CCNetArtifactDirectory)\integration-results.xml;" TreatErrorsAsWarnings="true" />
+    <Delete Files="$(CCNetArtifactDirectory)\FxCop.xml;$(CCNetArtifactDirectory)\msbuild-results.xml" TreatErrorsAsWarnings="true" />
+    <ItemGroup>
+      <ScenarioResultsFiles Include="$(CCNetArtifactDirectory)\*ScenarioResults.xml" />
+    </ItemGroup>
+    <Delete Files="@(ScenarioResultsFiles)" />
+    
+    <MakeDir Directories="$(BuildDirectory)" />
+  </Target>
+
+  <!-- This target should only be run by the build server (so that you dont have to revert/checkin CommonassemblyInfo.cs) -->
+  <Target Name="Version" Condition=" '$(CCNetLabel)' != '' ">
+    <Message Text="Version: $(Version)"/>
+    <AssemblyInfo
+				CodeLanguage="CS"
+				OutputFile="Src\CommonAssemblyInfo.cs"
+				AssemblyTitle="Consumentor.Shopgun"
+				AssemblyDescription=""
+				AssemblyCompany="Consumentor Ek. Förening"
+				AssemblyProduct="Consumentor.Shopgun"
+				AssemblyCopyright="Copyright © Consumentor Ek. Förening 2011"
+				CLSCompliant="true"
+				AssemblyVersion="$(Version)"
+				AssemblyFileVersion="$(Version)" />
+  </Target>
+</Project>

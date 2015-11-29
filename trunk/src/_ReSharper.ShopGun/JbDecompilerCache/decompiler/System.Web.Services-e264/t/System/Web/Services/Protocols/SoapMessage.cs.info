@@ -1,0 +1,20 @@
+﻿Code version: 6.1.37.86
+Assembly name System.Web.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a mvid {5edcf2e4-de6e-4330-9c12-fed50bfabb96}
+* ref mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {3a762d41-b8a2-4532-9374-e59c7d32b5e9}
+* ref System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {53f1a9c0-def8-4cc4-b0b9-1590b274ede8}
+* ref System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {70bc5017-f6d4-4d62-bb3b-17598e506217}
+* ref System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {9cc715b3-001d-4363-8179-45f77caf80f4}
+* ref System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {fe7c73c7-239e-4a94-a2c9-a55b6653c6a6}
+* ref System.EnterpriseServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {d7112dd7-2e4f-45df-bb18-8521c31b5894}
+* ref System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {d16be579-119f-44b4-bd46-3b55f5943ae0}
+* ref System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  mvid {7172a5cf-91b5-42f2-bb9b-c1f1fd52f4d2}
+* ref System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {82b9d938-d61e-4e8a-a44f-980b9b990f15}

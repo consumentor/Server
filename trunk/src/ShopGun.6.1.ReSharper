@@ -1,0 +1,6 @@
+<Configuration>
+  <CodeStyleSettings>
+    <ExternalPath>C:\Projects\Consumentor\ShopGun\trunk\tools\ReSharper\Code Style\CodeStyle.xml</ExternalPath>
+    <Sharing>EXTERNAL</Sharing>
+  </CodeStyleSettings>
+</Configuration>

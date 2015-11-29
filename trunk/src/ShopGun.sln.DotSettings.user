@@ -1,0 +1,7 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=0093D669_002D8206_002D41BC_002D868A_002DCAE540FE8A3B_002Fd_003AWebService_002Ff_003AIShopgunAppContract_002Ecs/@EntryIndexedValue">0093D669-8206-41BC-868A-CAE540FE8A3B/d:WebService/f:IShopgunAppContract.cs</s:String>
+	
+	
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=CF17F623_002DA491_002D426C_002DA708_002D6E5A64446B62_002Ff_003ACompany_002Ecs/@EntryIndexedValue">CF17F623-A491-426C-A708-6E5A64446B62/f:Company.cs</s:String>
+	<s:Boolean x:Key="/Default/Environment/SearchAndNavigation/MergeOccurences/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/Housekeeping/SolutionSettingsUpgraded/IsUpgraded/@EntryValue">True</s:Boolean></wpf:ResourceDictionary>

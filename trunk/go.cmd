@@ -1,0 +1,1 @@
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild ShopGun.msbuild /maxcpucount:2 /t:Build %*

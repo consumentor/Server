@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <Destination Include="D1">
+      <AppName>Shopgun.Server</AppName>
+      <TestServer>Shopgun-Server</TestServer>
+      <DatabaseServer>213.115.114.114,9353</DatabaseServer>
+      <!--<Parameters>/CreateDatabase /CreateServiceUser</Parameters>-->
+      <Parameters>/CreateServiceUser</Parameters>
+    </Destination>
+  </ItemGroup>
+
+  <!--<Target Name ="Install" Outputs="%(Destination.Identity)" DependsOnTargets="CopyInstall;UnInstall" >-->
+  <Target Name ="Install" Outputs="%(Destination.Identity)" DependsOnTargets="UnInstall;CopyInstall">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target Install for %(Destination.AppName)" />
+    <PropertyGroup>
+      <!--<InstallPath>I:\%(Destination.AppName)</InstallPath>-->
+      <InstallPath>E:\Consumentor\%(Destination.AppName)</InstallPath>
+      <ExeName>Consumentor.%(Destination.AppName).v$(Version).exe</ExeName>
+    </PropertyGroup>
+    <Message Text="AppServer: %(Destination.AppName)" />
+    <!--/delete : Cancels the specified network connection. If you specify the connection with an asterisk (*), all network connections are canceled.-->
+    <Exec Command="net use * /delete /Y" ContinueOnError="true" Condition="%(Destination.TestServer) != ''" />
+    <!--Connect to server and the shared resource-->
+    <Exec Command="net use I: \\$(ShopGunServer)\Install /persistent:no /user:$(InstallUser) $(InstallPwd)" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode"/>
+    </Exec>
+
+    <!--<WriteLinesToFile File="I:\%(Destination.AppName)\Install.cmd" Lines="C:\Install\%(Destination.AppName)\ToInstall\$(ExeName) /S %(Destination.Parameters) /DatabaseServer:%(Destination.DatabaseServer) /DmsServer:$(DmsServer)" Overwrite="true" Condition="$(ErrorCode)==0" />-->
+    <WriteLinesToFile File="E:\Consumentor\%(Destination.AppName)\Install.cmd" Lines="E:\Consumentor\%(Destination.AppName)\ToInstall\$(ExeName) /S %(Destination.Parameters) /DatabaseServer:%(Destination.DatabaseServer)" Overwrite="true" Condition="$(ErrorCode)==0" />
+    <!--<WriteLinesToFile File="psexecInstall.cmd" Lines="tools\pstools\psexec.exe \\%(Destination.TestServer) -u $(InstallUser) -p $(InstallPwd) -accepteula -i C:\Install\%(Destination.AppName)\Install.cmd" Overwrite="true" />
+    <Exec Command="psexecInstall.cmd" Condition="$(ErrorCode)==0" />-->
+    <Exec Command=" E:\Consumentor\%(Destination.AppName)\Install.cmd" Condition="$(ErrorCode)==0" />
+    <Copy SourceFiles="$(InstallPath)\ToInstall\$(ExeName)" DestinationFolder="$(InstallPath)\Installed\" Condition="$(ErrorCode)==0" />
+    <Delete Files="$(InstallPath)\ToInstall\$(ExeName)" Condition="$(ErrorCode)==0" />
+  </Target>
+
+  <Target Name="UnInstall" Outputs="%(Destination.Identity)" >
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target UnInstall for %(Destination.AppName)" />
+    <Message Text="UnInstall -  AppServer: %(Destination.AppName)" />
+
+    <Exec Command="net use * /delete /Y" ContinueOnError="true" Condition="$(ShopGunServer) != ''" />
+    <Exec Command="net use I: \\$(ShopGunServer)\Install /persistent:no /user:$(InstallUser) $(InstallPwd)" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode"/>
+    </Exec>
+    <ItemGroup>
+      <InstallerFiles Include="E:\Consumentor\%(Destination.AppName)\Installed\*.exe" />
+    </ItemGroup>
+    <Message Text="Files: @(InstallerFiles)" />
+
+    <RegexReplace Input="@(InstallerFiles)" Replacement="" Expression="(E:\\Consumentor\\%(Destination.AppName)\\Installed\\Consumentor.%(Destination.AppName).)|(.exe)">
+      <Output ItemName ="InstalledVersion" TaskParameter="Output" />
+    </RegexReplace>
+    <PropertyGroup>
+      <InstalledVersion>@(InstalledVersion)</InstalledVersion>
+    </PropertyGroup>
+    <Message Text="Files: $(InstalledVersion)" />
+    <!-- NOTE : 
+              Open the command promt and navigate to "C:Program Files"
+              Run this command this: "mklink /j Consumentor "C:\Program Files (x86)\Consumentor" 
+    -->
+    <WriteLinesToFile File="E:\Consumentor\%(Destination.AppName)\uninstall.cmd"
+                      Lines='"C:\Program Files\Consumentor\%(Destination.AppName)\$(InstalledVersion)\uninstall.exe" /S'
+                      Overwrite="true"
+                      Condition="($(ErrorCode)==0) And $(InstalledVersion) != ''" />
+
+    <!--<WriteLinesToFile File="psexec.cmd"
+                      Lines="tools\pstools\psexec.exe \\$(ShopGunServer) -u $(InstallUser) -p $(InstallPwd) -accepteula -i C:\Install\%(Destination.AppName)\uninstall.cmd"
+                      Overwrite="true"
+                      Condition="($(ErrorCode)==0) And $(InstalledVersion) != ''" />-->
+    <!--<Exec Command="psexec.cmd"
+          ContinueOnError="true"
+          Condition="@(InstalledVersion)!=''" />-->
+    <Exec Command="E:\Consumentor\%(Destination.AppName)\uninstall.cmd" ContinueOnError="true" Condition="@(InstalledVersion)!=''" />
+    <Copy SourceFiles="@(InstallerFiles)" DestinationFolder="E:\Consumentor\%(Destination.AppName)\UnInstalled\" Condition="($(ErrorCode)==0) And ($(InstalledVersion)!='')" />
+    <Delete Files="@(InstallerFiles)" Condition="($(ErrorCode)==0) And ($(InstalledVersion)!='')" />
+    <!-- Allow the uninstaller to run -->
+    <Sleep Seconds="20" Condition="($(ErrorCode)==0) And (@(InstalledVersion)!='')" />
+  </Target>
+
+  <Target Name="CopyInstall" Outputs="%(Destination.Identity)" DependsOnTargets="BuildInstaller" >
+    <!-- Condition="'$(CCNetLabel)' != ''"> -->
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target CopyInstall for %(Destination.AppName)" />
+    <ItemGroup>
+      <PowerShellScripts Include="src\Installer\Powershell_scripts\*.*" />
+    </ItemGroup>
+    <Message Text="AppServer: %(Destination.AppName)" />
+    <!--Connect to server and the shared resource-->
+    <Exec Command="net use * /delete /Y" ContinueOnError="true" Condition="$(ShopGunServer) != ''" />
+    <Message Text="net use I: \\$(ShopGunServer)\Install /persistent:no /user:$(InstallUser) $(InstallPwd)" />
+    <Exec Command="net use I: \\$(ShopGunServer)\Install /persistent:no /user:$(InstallUser) $(InstallPwd)" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode"/>
+    </Exec>
+
+    <MakeDir Directories="E:\Consumentor\%(Destination.AppName)" Condition="$(ErrorCode)==0 And (!(Exists('E:\Consumentor\%(Destination.AppName')))" />
+    <MakeDir Directories="E:\Consumentor\%(Destination.AppName)\ToInstall" Condition="$(ErrorCode)==0 And (!(Exists('E:\Consumentor\%(Destination.AppName)\ToInstall')))" />
+    <MakeDir Directories="E:\Consumentor\%(Destination.AppName)\Installed" Condition="$(ErrorCode)==0 And (!(Exists('E:\Consumentor\%(Destination.AppName)\Installed')))" />
+    <MakeDir Directories="E:\Consumentor\%(Destination.AppName)\UnInstalled" Condition="$(ErrorCode)==0 And (!(Exists('E:\Consumentor\%(Destination.AppName)\UnInstalled')))" />
+    <Exec Command="del /Q E:\Consumentor\%(Destination.AppName)\ToInstall\*.exe" Condition="$(ErrorCode)==0" />
+    <Copy SourceFiles="@(PowerShellScripts)" DestinationFolder="E:\Consumentor\%(Destination.AppName)" SkipUnchangedFiles="true" Condition="$(ErrorCode)==0" />
+    <Copy SourceFiles="$(BuildDirectory)\Installers\Consumentor.%(Destination.AppName).v$(Version).exe" DestinationFiles="E:\Consumentor\%(Destination.AppName)\ToInstall\Consumentor.%(Destination.AppName).v$(Version).exe" Condition="$(ErrorCode)==0" />
+    <WriteLinesToFile File="E:\Consumentor\%(Destination.AppName)\DatabaseServer.txt" Lines="%(Destination.DatabaseServer)" Overwrite="true" Condition="$(ErrorCode)==0 And %(Destination.DatabaseServer)!=''" />
+  </Target>
+
+  <!--<Target Name="BuildInstaller" DependsOnTargets="ServerInstaller;ClientInstaller">-->
+  <Target Name="BuildInstaller" DependsOnTargets="ServerInstaller">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target BuildInstaller" />
+  </Target>
+
+  <Target Name="ClientInstaller" DependsOnTargets="DeleteOldInstallers">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target ClientInstaller" />
+    <MakeDir Directories="$(BuildDirectory)\Installers" />
+    <!-- P2Simulator web -->
+    <!--<exec
+      WorkingDirectory="."
+      Command="tools\nsis\makensis.exe /DVERSION=$(Version) src\Installer\P2Simulator.Web.Installer.nsi"
+		  />-->
+    <!-- Laminator -->
+    <!--<exec
+      WorkingDirectory="."
+      Command="tools\nsis\makensis.exe /DVERSION=$(Version) /DAPPNAME=DMS.Client.Laminator /DFILESPATH=..\UI\WindowsUI.Laminator\bin\debug src\Installer\DMS.Client.Installer.nsi"
+		  />-->
+  </Target>
+
+  <!--<Target Name="ServerInstaller" DependsOnTargets="DeleteOldInstallers">-->
+  <Target Name="ServerInstaller" DependsOnTargets="DeleteOldInstallers">
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target ServerInstaller" />
+    <MakeDir Directories="$(BuildDirectory)\Installers"/>
+    <!-- Server -->
+    <exec
+      WorkingDirectory="."
+      Command="tools\nsis\makensis.exe /DVERSION=$(Version) /DAPPNAME=Shopgun.Server /DFILESPATH=..\ApplicationService.Server\bin\debug src\Installer\Shopgun.Installer.nsi "
+	  />
+  </Target>
+
+  <Target Name="DeleteOldInstallers" DependsOnTargets="Version">
+    <ItemGroup>
+      <OldInstallerFiles Include="$(BuildDirectory)\Installers\*.exe" />
+    </ItemGroup>
+    <CCNetBuildStatus FileName="$(BuildStatusFile)" CreateFile="false" Item="Target DeleteOldInstallers" />
+    <Delete Files="@(OldInstallerFiles)" />
+  </Target>
+</Project>

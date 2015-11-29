@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs"
+    Inherits="UC_MasterPage" %>
+
+<%@ Register Assembly="System.Web.Ajax" Namespace="System.Web.UI" TagPrefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="styles/imageOrganizer.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body xmlns:sys="javascript:Sys" xmlns:dataview="javascript:Sys.UI.DataView">
+    <form id="form1" runat="server">
+        <div>
+            <asp:AjaxScriptManager ID="AjaxScriptManager1" runat="server">
+                <Scripts>
+                    <asp:ScriptReference Name="MicrosoftAjaxTemplates.js" />
+                    <asp:ScriptReference Name="MicrosoftAjaxAdoNet.js" />
+                    <asp:ScriptReference Name="MicrosoftAjaxDataContext.js" />
+                </Scripts>
+            </asp:AjaxScriptManager>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

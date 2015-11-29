@@ -1,0 +1,10 @@
+﻿Code version: 6.1.37.86
+Assembly name Castle.DynamicProxy2, Version=2.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc mvid {bd8108f2-b965-4fff-aa4a-405f7930dbe0}
+* ref mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {b2dd7fad-f33e-483a-8e08-5d9b09c1f0fb}
+* ref Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc
+  mvid {3a456260-73fa-4067-805e-816447b1b651}
+* ref System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {fa32f5ae-6217-44a5-a3ce-fdeb5c4a66b8}
+* ref System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {046ca903-f7dc-492a-a665-b2946aeaf79a}
